@@ -28,6 +28,7 @@
 		DB14E59E13B1CF610030E84F /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = DB14E59613B1CF610030E84F /* zutil.c */; };
 		DB14E5A013B1CFDE0030E84F /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E59F13B1CFDE0030E84F /* libz.1.1.3.dylib */; };
 		DB14E5A313B1D3B30030E84F /* StationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E5A213B1D3B30030E84F /* StationAnnotation.m */; };
+		DB19B04C13B28C770060C98F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DB19B04B13B28C770060C98F /* Default.png */; };
 		DB50425C13B1D7B000E869A3 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50425B13B1D7B000E869A3 /* list.png */; };
 		DB50425F13B1D7C600E869A3 /* navicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50425E13B1D7C600E869A3 /* navicon.png */; };
 		DB50426213B1D80300E869A3 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50426013B1D80300E869A3 /* 103-map.png */; };
@@ -75,6 +76,7 @@
 		DB14E59F13B1CFDE0030E84F /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		DB14E5A113B1D3B30030E84F /* StationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotation.h; sourceTree = "<group>"; };
 		DB14E5A213B1D3B30030E84F /* StationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotation.m; sourceTree = "<group>"; };
+		DB19B04B13B28C770060C98F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DB50425B13B1D7B000E869A3 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		DB50425E13B1D7C600E869A3 /* navicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navicon.png; sourceTree = "<group>"; };
 		DB50426013B1D80300E869A3 /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		DB14E56A13B1CD7B0030E84F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB19B04B13B28C770060C98F /* Default.png */,
 				DB50427513B2388800E869A3 /* icon.png */,
 				DB50427613B2388800E869A3 /* icon@2x */,
 				DB50426413B1D83800E869A3 /* navicon@2x.png */,
@@ -296,6 +299,7 @@
 				DB50426D13B218D500E869A3 /* StationDetailView.xib in Resources */,
 				DB50427713B2388800E869A3 /* icon.png in Resources */,
 				DB50427813B2388800E869A3 /* icon@2x in Resources */,
+				DB19B04C13B28C770060C98F /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

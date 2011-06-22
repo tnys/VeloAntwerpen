@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface VeloAntwerpenAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
 	NSArray* stations;
+	CLLocation* currentLocation;
+	CLLocationManager* locationManager;
 }
 
 @property (nonatomic, readonly) NSArray* stations; 
+@property (nonatomic, readonly) CLLocation* currentLocation;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 

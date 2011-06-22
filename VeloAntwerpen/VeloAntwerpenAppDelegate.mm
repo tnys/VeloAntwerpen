@@ -9,11 +9,12 @@
 #import "VeloAntwerpenAppDelegate.h"
 #import "tinyxml.h"
 #import "Station.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation VeloAntwerpenAppDelegate
 
 
-@synthesize window=_window, stations;
+@synthesize window=_window, stations, currentLocation;
 
 @synthesize tabBarController=_tabBarController;
 
@@ -63,12 +64,26 @@
 		
 		stations = [NSArray arrayWithArray:res];
 		
-		[[NSNotificationCenter defaultCenter] postNotificationName:STATIONS_UPDATED_NOTIFICATIONNAME object:self userInfo:nil];
+//		dispatch_async(dispatch_get_main_queue(), ^(void) {
+			[[NSNotificationCenter defaultCenter] postNotificationName:STATIONS_UPDATED_NOTIFICATIONNAME object:self userInfo:nil];
+//		});
 	});	
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+	[currentLocation release];
+	currentLocation = [newLocation retain];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	locationManager = [[CLLocationManager alloc] init];
+	locationManager.delegate = self;
+	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+	[locationManager startUpdatingLocation];
+	
 	[self reload];
 	
 	self.window.rootViewController = self.tabBarController;

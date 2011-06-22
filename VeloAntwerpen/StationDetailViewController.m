@@ -7,6 +7,7 @@
 //
 
 #import "StationDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation StationDetailViewController
 
@@ -41,20 +42,18 @@
 			self.view;
 			nameLbl.text = station.name;
 			
-			MKCoordinateRegion region;
-			MKCoordinateSpan span;
-			span.latitudeDelta=0.005;
-			span.longitudeDelta=0.005; 
-			region.span=span;
-			region.center=CLLocationCoordinate2DMake(station.latitude, station.longitude);
-			[self.mapView setRegion:region animated:TRUE];
-			[self.mapView regionThatFits:region];
-			
+			dispatch_async(dispatch_get_global_queue(0, 0), ^(void) {
+				UIImage* img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?center=%f,%f&zoom=14&size=85x85&maptype=roadmap&sensor=true", station.latitude, station.longitude]]]];
+				dispatch_async(dispatch_get_main_queue(), ^(void) {
+					self.mapView.image = img;
+				});
+			});
+
 			[reverseGeocoder cancel];
 			[reverseGeocoder release];
 			[detailedLocation release];
 			
-			reverseGeocoder = [[MKReverseGeocoder alloc] initWithCoordinate:region.center];
+			reverseGeocoder = [[MKReverseGeocoder alloc] initWithCoordinate:CLLocationCoordinate2DMake(station.latitude, station.longitude)];
 			reverseGeocoder.delegate = self;
 			[reverseGeocoder start];
 		}
@@ -138,9 +137,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
+	CLLocationCoordinate2D currentLocation = [[[UIApplication sharedApplication].delegate currentLocation] coordinate];
 	if (indexPath.section == 1 && indexPath.row == 0)
 	{
-		CLLocationCoordinate2D currentLocation = self.mapView.userLocation.location.coordinate;
 		NSString* url = [NSString stringWithFormat: @"http://maps.google.com/maps?saddr=%f,%f&daddr=%f,%f",
 						 currentLocation.latitude, currentLocation.longitude,
 						 station.latitude, station.longitude];
@@ -149,7 +148,6 @@
 	}
 	else if (indexPath.section == 1 && indexPath.row == 1)
 	{
-		CLLocationCoordinate2D currentLocation = self.mapView.userLocation.location.coordinate;
 		NSString* url = [NSString stringWithFormat: @"http://maps.google.com/maps?saddr=%f,%f&daddr=%f,%f",
 						 station.latitude, station.longitude,
 						 currentLocation.latitude, currentLocation.longitude];
@@ -164,6 +162,9 @@
 {
     [super viewDidLoad];
 	self.title = @"Details";
+	self.mapView.layer.cornerRadius = 5.0;
+	self.mapView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+	self.mapView.layer.borderWidth = 1.0;
 }
 
 - (void)viewDidUnload

@@ -30,7 +30,9 @@
 -(void)stationsUpdated:(NSNotification*)notif
 {
 	self.stations = [[UIApplication sharedApplication].delegate stations];
-	[self.tableView reloadData];
+	dispatch_async(dispatch_get_main_queue(), ^(void) {
+		[self.tableView reloadData];
+	});
 }
 
 #pragma mark UITableViewDelegate

@@ -60,7 +60,7 @@
 
 -(void)reload
 {
-	NSArray* stations = [[UIApplication sharedApplication].delegate stations];
+	NSArray* stations = [[[UIApplication sharedApplication].delegate stations] retain];
 	
 	[mapView removeAnnotations:mapView.annotations];
 	for (Station* station in stations)
@@ -72,6 +72,8 @@
 		});
 		[ann release];
 	}
+	
+	[stations release];
 }
 
 #pragma mark MKMapViewDelegate

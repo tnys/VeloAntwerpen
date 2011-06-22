@@ -11,7 +11,7 @@
 #import "Station.h"
 
 @interface StationDetailViewController : UIViewController {
-	IBOutlet MKMapView* mapView;
+	IBOutlet UIImageView* mapView;
 	IBOutlet UILabel* nameLbl;
 	IBOutlet UITableView* tableView;
 	
@@ -20,7 +20,7 @@
 	MKPlacemark* detailedLocation;
 }
 
-@property (nonatomic, retain) IBOutlet MKMapView* mapView;
+@property (nonatomic, retain) IBOutlet UIImageView* mapView;
 @property (nonatomic, retain) IBOutlet UILabel* nameLbl;
 @property (nonatomic, retain) IBOutlet UITableView* tableView;
 @property (nonatomic, retain) Station* station;
