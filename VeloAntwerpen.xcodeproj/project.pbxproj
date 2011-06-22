@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB14E56413B1CD7B0030E84F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E56313B1CD7B0030E84F /* UIKit.framework */; };
+		DB14E56613B1CD7B0030E84F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E56513B1CD7B0030E84F /* Foundation.framework */; };
+		DB14E56813B1CD7B0030E84F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E56713B1CD7B0030E84F /* CoreGraphics.framework */; };
+		DB14E56E13B1CD7B0030E84F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB14E56C13B1CD7B0030E84F /* InfoPlist.strings */; };
+		DB14E57113B1CD7B0030E84F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E57013B1CD7B0030E84F /* main.m */; };
+		DB14E57413B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = DB14E57313B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm */; };
+		DB14E57713B1CD7B0030E84F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB14E57513B1CD7B0030E84F /* MainWindow.xib */; };
+		DB14E57A13B1CD7B0030E84F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E57913B1CD7B0030E84F /* MapViewController.m */; };
+		DB14E57D13B1CD7B0030E84F /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E57C13B1CD7B0030E84F /* ListViewController.m */; };
+		DB14E58013B1CD7B0030E84F /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB14E57E13B1CD7B0030E84F /* MapView.xib */; };
+		DB14E58313B1CD7B0030E84F /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB14E58113B1CD7B0030E84F /* ListView.xib */; };
+		DB14E58A13B1CE6B0030E84F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E58913B1CE6B0030E84F /* MapKit.framework */; };
+		DB14E59813B1CF610030E84F /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = DB14E58C13B1CF610030E84F /* deflate.c */; };
+		DB14E59913B1CF610030E84F /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB14E58E13B1CF610030E84F /* tinystr.cpp */; };
+		DB14E59A13B1CF610030E84F /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB14E59013B1CF610030E84F /* tinyxml.cpp */; };
+		DB14E59B13B1CF610030E84F /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB14E59213B1CF610030E84F /* tinyxmlerror.cpp */; };
+		DB14E59C13B1CF610030E84F /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB14E59313B1CF610030E84F /* tinyxmlparser.cpp */; };
+		DB14E59D13B1CF610030E84F /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = DB14E59413B1CF610030E84F /* trees.c */; };
+		DB14E59E13B1CF610030E84F /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = DB14E59613B1CF610030E84F /* zutil.c */; };
+		DB14E5A013B1CFDE0030E84F /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E59F13B1CFDE0030E84F /* libz.1.1.3.dylib */; };
+		DB14E5A313B1D3B30030E84F /* StationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E5A213B1D3B30030E84F /* StationAnnotation.m */; };
+		DB50425C13B1D7B000E869A3 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50425B13B1D7B000E869A3 /* list.png */; };
+		DB50425F13B1D7C600E869A3 /* navicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50425E13B1D7C600E869A3 /* navicon.png */; };
+		DB50426213B1D80300E869A3 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50426013B1D80300E869A3 /* 103-map.png */; };
+		DB50426313B1D80300E869A3 /* 103-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50426113B1D80300E869A3 /* 103-map@2x.png */; };
+		DB50426513B1D83800E869A3 /* navicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50426413B1D83800E869A3 /* navicon@2x.png */; };
+		DB50426C13B218D500E869A3 /* StationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB50426A13B218D500E869A3 /* StationDetailViewController.m */; };
+		DB50426D13B218D500E869A3 /* StationDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB50426B13B218D500E869A3 /* StationDetailView.xib */; };
+		DB50427113B21AAC00E869A3 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = DB50427013B21AAC00E869A3 /* Station.m */; };
+		DB50427413B220A600E869A3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB50427313B220A600E869A3 /* CoreLocation.framework */; };
+		DB50427713B2388800E869A3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50427513B2388800E869A3 /* icon.png */; };
+		DB50427813B2388800E869A3 /* icon@2x in Resources */ = {isa = PBXBuildFile; fileRef = DB50427613B2388800E869A3 /* icon@2x */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DB14E55F13B1CD7B0030E84F /* VeloAntwerpen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeloAntwerpen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB14E56313B1CD7B0030E84F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DB14E56513B1CD7B0030E84F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DB14E56713B1CD7B0030E84F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DB14E56B13B1CD7B0030E84F /* VeloAntwerpen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VeloAntwerpen-Info.plist"; sourceTree = "<group>"; };
+		DB14E56D13B1CD7B0030E84F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB14E56F13B1CD7B0030E84F /* VeloAntwerpen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VeloAntwerpen-Prefix.pch"; sourceTree = "<group>"; };
+		DB14E57013B1CD7B0030E84F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB14E57213B1CD7B0030E84F /* VeloAntwerpenAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VeloAntwerpenAppDelegate.h; sourceTree = "<group>"; };
+		DB14E57313B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VeloAntwerpenAppDelegate.mm; sourceTree = "<group>"; };
+		DB14E57613B1CD7B0030E84F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		DB14E57813B1CD7B0030E84F /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		DB14E57913B1CD7B0030E84F /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		DB14E57B13B1CD7B0030E84F /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		DB14E57C13B1CD7B0030E84F /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		DB14E57F13B1CD7B0030E84F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MapView.xib; sourceTree = "<group>"; };
+		DB14E58213B1CD7B0030E84F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ListView.xib; sourceTree = "<group>"; };
+		DB14E58913B1CE6B0030E84F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DB14E58C13B1CF610030E84F /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
+		DB14E58D13B1CF610030E84F /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflate.h; sourceTree = "<group>"; };
+		DB14E58E13B1CF610030E84F /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
+		DB14E58F13B1CF610030E84F /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
+		DB14E59013B1CF610030E84F /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		DB14E59113B1CF610030E84F /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		DB14E59213B1CF610030E84F /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		DB14E59313B1CF610030E84F /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		DB14E59413B1CF610030E84F /* trees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trees.c; sourceTree = "<group>"; };
+		DB14E59513B1CF610030E84F /* trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trees.h; sourceTree = "<group>"; };
+		DB14E59613B1CF610030E84F /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
+		DB14E59713B1CF610030E84F /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		DB14E59F13B1CFDE0030E84F /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		DB14E5A113B1D3B30030E84F /* StationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotation.h; sourceTree = "<group>"; };
+		DB14E5A213B1D3B30030E84F /* StationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotation.m; sourceTree = "<group>"; };
+		DB50425B13B1D7B000E869A3 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		DB50425E13B1D7C600E869A3 /* navicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navicon.png; sourceTree = "<group>"; };
+		DB50426013B1D80300E869A3 /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
+		DB50426113B1D80300E869A3 /* 103-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map@2x.png"; sourceTree = "<group>"; };
+		DB50426413B1D83800E869A3 /* navicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navicon@2x.png"; sourceTree = "<group>"; };
+		DB50426913B218D500E869A3 /* StationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationDetailViewController.h; sourceTree = "<group>"; };
+		DB50426A13B218D500E869A3 /* StationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationDetailViewController.m; sourceTree = "<group>"; };
+		DB50426B13B218D500E869A3 /* StationDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationDetailView.xib; sourceTree = "<group>"; };
+		DB50426F13B21AAC00E869A3 /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		DB50427013B21AAC00E869A3 /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		DB50427213B21C4B00E869A3 /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
+		DB50427313B220A600E869A3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DB50427513B2388800E869A3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		DB50427613B2388800E869A3 /* icon@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "icon@2x"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB14E55C13B1CD7B0030E84F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB50427413B220A600E869A3 /* CoreLocation.framework in Frameworks */,
+				DB14E5A013B1CFDE0030E84F /* libz.1.1.3.dylib in Frameworks */,
+				DB14E58A13B1CE6B0030E84F /* MapKit.framework in Frameworks */,
+				DB14E56413B1CD7B0030E84F /* UIKit.framework in Frameworks */,
+				DB14E56613B1CD7B0030E84F /* Foundation.framework in Frameworks */,
+				DB14E56813B1CD7B0030E84F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB14E55413B1CD7B0030E84F = {
+			isa = PBXGroup;
+			children = (
+				DB50427313B220A600E869A3 /* CoreLocation.framework */,
+				DB14E59F13B1CFDE0030E84F /* libz.1.1.3.dylib */,
+				DB14E56913B1CD7B0030E84F /* VeloAntwerpen */,
+				DB14E56213B1CD7B0030E84F /* Frameworks */,
+				DB14E56013B1CD7B0030E84F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB14E56013B1CD7B0030E84F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB14E55F13B1CD7B0030E84F /* VeloAntwerpen.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB14E56213B1CD7B0030E84F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB14E58913B1CE6B0030E84F /* MapKit.framework */,
+				DB14E56313B1CD7B0030E84F /* UIKit.framework */,
+				DB14E56513B1CD7B0030E84F /* Foundation.framework */,
+				DB14E56713B1CD7B0030E84F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB14E56913B1CD7B0030E84F /* VeloAntwerpen */ = {
+			isa = PBXGroup;
+			children = (
+				DB50426E13B21A9900E869A3 /* Model */,
+				DB50426813B218A200E869A3 /* List */,
+				DB50426713B2189C00E869A3 /* Map */,
+				DB50426613B2188F00E869A3 /* Utils */,
+				DB14E57213B1CD7B0030E84F /* VeloAntwerpenAppDelegate.h */,
+				DB14E57313B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm */,
+				DB50427213B21C4B00E869A3 /* Keys.h */,
+				DB14E57513B1CD7B0030E84F /* MainWindow.xib */,
+				DB14E56A13B1CD7B0030E84F /* Supporting Files */,
+			);
+			path = VeloAntwerpen;
+			sourceTree = "<group>";
+		};
+		DB14E56A13B1CD7B0030E84F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB50427513B2388800E869A3 /* icon.png */,
+				DB50427613B2388800E869A3 /* icon@2x */,
+				DB50426413B1D83800E869A3 /* navicon@2x.png */,
+				DB50426013B1D80300E869A3 /* 103-map.png */,
+				DB50426113B1D80300E869A3 /* 103-map@2x.png */,
+				DB50425E13B1D7C600E869A3 /* navicon.png */,
+				DB50425B13B1D7B000E869A3 /* list.png */,
+				DB14E56B13B1CD7B0030E84F /* VeloAntwerpen-Info.plist */,
+				DB14E56C13B1CD7B0030E84F /* InfoPlist.strings */,
+				DB14E56F13B1CD7B0030E84F /* VeloAntwerpen-Prefix.pch */,
+				DB14E57013B1CD7B0030E84F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB14E58B13B1CF610030E84F /* TinyXML */ = {
+			isa = PBXGroup;
+			children = (
+				DB14E58C13B1CF610030E84F /* deflate.c */,
+				DB14E58D13B1CF610030E84F /* deflate.h */,
+				DB14E58E13B1CF610030E84F /* tinystr.cpp */,
+				DB14E58F13B1CF610030E84F /* tinystr.h */,
+				DB14E59013B1CF610030E84F /* tinyxml.cpp */,
+				DB14E59113B1CF610030E84F /* tinyxml.h */,
+				DB14E59213B1CF610030E84F /* tinyxmlerror.cpp */,
+				DB14E59313B1CF610030E84F /* tinyxmlparser.cpp */,
+				DB14E59413B1CF610030E84F /* trees.c */,
+				DB14E59513B1CF610030E84F /* trees.h */,
+				DB14E59613B1CF610030E84F /* zutil.c */,
+				DB14E59713B1CF610030E84F /* zutil.h */,
+			);
+			path = TinyXML;
+			sourceTree = "<group>";
+		};
+		DB50426613B2188F00E869A3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DB14E58B13B1CF610030E84F /* TinyXML */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		DB50426713B2189C00E869A3 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				DB14E5A113B1D3B30030E84F /* StationAnnotation.h */,
+				DB14E5A213B1D3B30030E84F /* StationAnnotation.m */,
+				DB14E57813B1CD7B0030E84F /* MapViewController.h */,
+				DB14E57913B1CD7B0030E84F /* MapViewController.m */,
+				DB14E57E13B1CD7B0030E84F /* MapView.xib */,
+				DB50426913B218D500E869A3 /* StationDetailViewController.h */,
+				DB50426A13B218D500E869A3 /* StationDetailViewController.m */,
+				DB50426B13B218D500E869A3 /* StationDetailView.xib */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		DB50426813B218A200E869A3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DB14E57B13B1CD7B0030E84F /* ListViewController.h */,
+				DB14E57C13B1CD7B0030E84F /* ListViewController.m */,
+				DB14E58113B1CD7B0030E84F /* ListView.xib */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		DB50426E13B21A9900E869A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB50426F13B21AAC00E869A3 /* Station.h */,
+				DB50427013B21AAC00E869A3 /* Station.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB14E55E13B1CD7B0030E84F /* VeloAntwerpen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB14E58613B1CD7B0030E84F /* Build configuration list for PBXNativeTarget "VeloAntwerpen" */;
+			buildPhases = (
+				DB14E55B13B1CD7B0030E84F /* Sources */,
+				DB14E55C13B1CD7B0030E84F /* Frameworks */,
+				DB14E55D13B1CD7B0030E84F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VeloAntwerpen;
+			productName = VeloAntwerpen;
+			productReference = DB14E55F13B1CD7B0030E84F /* VeloAntwerpen.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB14E55613B1CD7B0030E84F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Netwalk VOF";
+			};
+			buildConfigurationList = DB14E55913B1CD7B0030E84F /* Build configuration list for PBXProject "VeloAntwerpen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DB14E55413B1CD7B0030E84F;
+			productRefGroup = DB14E56013B1CD7B0030E84F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB14E55E13B1CD7B0030E84F /* VeloAntwerpen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB14E55D13B1CD7B0030E84F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB14E56E13B1CD7B0030E84F /* InfoPlist.strings in Resources */,
+				DB14E57713B1CD7B0030E84F /* MainWindow.xib in Resources */,
+				DB14E58013B1CD7B0030E84F /* MapView.xib in Resources */,
+				DB14E58313B1CD7B0030E84F /* ListView.xib in Resources */,
+				DB50425C13B1D7B000E869A3 /* list.png in Resources */,
+				DB50425F13B1D7C600E869A3 /* navicon.png in Resources */,
+				DB50426213B1D80300E869A3 /* 103-map.png in Resources */,
+				DB50426313B1D80300E869A3 /* 103-map@2x.png in Resources */,
+				DB50426513B1D83800E869A3 /* navicon@2x.png in Resources */,
+				DB50426D13B218D500E869A3 /* StationDetailView.xib in Resources */,
+				DB50427713B2388800E869A3 /* icon.png in Resources */,
+				DB50427813B2388800E869A3 /* icon@2x in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB14E55B13B1CD7B0030E84F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB14E57113B1CD7B0030E84F /* main.m in Sources */,
+				DB14E57413B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm in Sources */,
+				DB14E57A13B1CD7B0030E84F /* MapViewController.m in Sources */,
+				DB14E57D13B1CD7B0030E84F /* ListViewController.m in Sources */,
+				DB14E59813B1CF610030E84F /* deflate.c in Sources */,
+				DB14E59913B1CF610030E84F /* tinystr.cpp in Sources */,
+				DB14E59A13B1CF610030E84F /* tinyxml.cpp in Sources */,
+				DB14E59B13B1CF610030E84F /* tinyxmlerror.cpp in Sources */,
+				DB14E59C13B1CF610030E84F /* tinyxmlparser.cpp in Sources */,
+				DB14E59D13B1CF610030E84F /* trees.c in Sources */,
+				DB14E59E13B1CF610030E84F /* zutil.c in Sources */,
+				DB14E5A313B1D3B30030E84F /* StationAnnotation.m in Sources */,
+				DB50426C13B218D500E869A3 /* StationDetailViewController.m in Sources */,
+				DB50427113B21AAC00E869A3 /* Station.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DB14E56C13B1CD7B0030E84F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB14E56D13B1CD7B0030E84F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DB14E57513B1CD7B0030E84F /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB14E57613B1CD7B0030E84F /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		DB14E57E13B1CD7B0030E84F /* MapView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB14E57F13B1CD7B0030E84F /* en */,
+			);
+			name = MapView.xib;
+			sourceTree = "<group>";
+		};
+		DB14E58113B1CD7B0030E84F /* ListView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB14E58213B1CD7B0030E84F /* en */,
+			);
+			name = ListView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB14E58413B1CD7B0030E84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB14E58513B1CD7B0030E84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		DB14E58713B1CD7B0030E84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VeloAntwerpen/VeloAntwerpen-Prefix.pch";
+				INFOPLIST_FILE = "VeloAntwerpen/VeloAntwerpen-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DB14E58813B1CD7B0030E84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VeloAntwerpen/VeloAntwerpen-Prefix.pch";
+				INFOPLIST_FILE = "VeloAntwerpen/VeloAntwerpen-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB14E55913B1CD7B0030E84F /* Build configuration list for PBXProject "VeloAntwerpen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB14E58413B1CD7B0030E84F /* Debug */,
+				DB14E58513B1CD7B0030E84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB14E58613B1CD7B0030E84F /* Build configuration list for PBXNativeTarget "VeloAntwerpen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB14E58713B1CD7B0030E84F /* Debug */,
+				DB14E58813B1CD7B0030E84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB14E55613B1CD7B0030E84F /* Project object */;
+}

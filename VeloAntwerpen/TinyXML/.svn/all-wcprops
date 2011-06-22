@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/netwalk/!svn/ver/907/trunk/EasyMinders/Classes/TinyXML
+END
+tinyxmlerror.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/netwalk/!svn/ver/906/trunk/EasyMinders/Classes/TinyXML/tinyxmlerror.cpp
+END
+tinystr.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/netwalk/!svn/ver/906/trunk/EasyMinders/Classes/TinyXML/tinystr.h
+END
+tinyxmlparser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/netwalk/!svn/ver/906/trunk/EasyMinders/Classes/TinyXML/tinyxmlparser.cpp
+END
+trees.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/netwalk/!svn/ver/906/trunk/EasyMinders/Classes/TinyXML/trees.c
+END
+deflate.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/netwalk/!svn/ver/907/trunk/EasyMinders/Classes/TinyXML/deflate.c
+END
+tinyxml.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/netwalk/!svn/ver/906/trunk/EasyMinders/Classes/TinyXML/tinyxml.cpp
+END
+trees.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/netwalk/!svn/ver/906/trunk/EasyMinders/Classes/TinyXML/trees.h
+END
+zutil.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/netwalk/!svn/ver/907/trunk/EasyMinders/Classes/TinyXML/zutil.c
+END
+deflate.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/netwalk/!svn/ver/907/trunk/EasyMinders/Classes/TinyXML/deflate.h
+END
+tinyxml.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/netwalk/!svn/ver/906/trunk/EasyMinders/Classes/TinyXML/tinyxml.h
+END
+tinystr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/netwalk/!svn/ver/906/trunk/EasyMinders/Classes/TinyXML/tinystr.cpp
+END
+zutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/netwalk/!svn/ver/907/trunk/EasyMinders/Classes/TinyXML/zutil.h
+END
