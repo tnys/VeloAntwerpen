@@ -12,6 +12,7 @@
 @interface MapViewController : UIViewController {
 	IBOutlet MKMapView* mapView;
 	BOOL zoomedOnce;
+	BOOL viewVisible;
 }
 
 @property (nonatomic, retain) IBOutlet MKMapView* mapView;

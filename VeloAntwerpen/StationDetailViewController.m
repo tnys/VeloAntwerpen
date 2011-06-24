@@ -75,8 +75,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.section == 0)
-		return 88.0;
+	if (indexPath.section == 0 && indexPath.row == 0)
+		return 76.0;
 	return 44.0;
 }
 
@@ -88,7 +88,7 @@
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if (section == 0)
-		return 1;
+		return 3;
 	else
 		return 2;
 }
@@ -97,10 +97,10 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-	if (indexPath.section == 0)
+	if (indexPath.section == 0 && indexPath.row == 0)
 	{
 		UITableViewCell* cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:nil] autorelease];
-		cell.textLabel.text = @"address";
+		cell.textLabel.text = NSLocalizedString(@"address", @"");
 		cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0];
 		cell.detailTextLabel.numberOfLines = 4;
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -116,6 +116,25 @@
 		cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:14.0];
 		return cell;
 	}
+	else if (indexPath.section == 0)
+	{
+		UITableViewCell* cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:nil] autorelease];
+		cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0];
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+		cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:14.0];
+		
+		if (indexPath.row == 1)
+		{
+			cell.textLabel.text = NSLocalizedString(@"slots", @"");
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", station.slots];
+		}
+		else if (indexPath.row == 2)
+		{
+			cell.textLabel.text = NSLocalizedString(@"free", @"");
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", station.free];
+		}
+		return cell;
+	}
 	else if (indexPath.section == 1)
 	{
 		static NSString *CellIdentifier = @"buttoncell";
@@ -126,9 +145,9 @@
 			cell.textLabel.textAlignment = UITextAlignmentCenter;
 		}
 		if (indexPath.row == 0)
-			cell.textLabel.text = @"Directions To Here";
+			cell.textLabel.text = NSLocalizedString(@"Directions To Here", @"");
 		else if (indexPath.row == 1)
-			cell.textLabel.text = @"Directions From Here";
+			cell.textLabel.text = NSLocalizedString(@"Directions From Here", @"");
 		return cell;
 	}
 	return nil;
@@ -161,7 +180,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.title = @"Details";
+	self.title = NSLocalizedString(@"Details", @"");
 	self.mapView.layer.cornerRadius = 5.0;
 	self.mapView.layer.borderColor = [UIColor darkGrayColor].CGColor;
 	self.mapView.layer.borderWidth = 1.0;

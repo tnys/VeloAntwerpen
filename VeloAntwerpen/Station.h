@@ -19,8 +19,10 @@
 
 @property (nonatomic) CGFloat latitude;
 @property (nonatomic) CGFloat longitude;
+@property (nonatomic) int stationID;
 @property (nonatomic) int slots;
 @property (nonatomic) int free;
 @property (nonatomic, retain) NSString* name;
+@property (nonatomic, retain) NSDate* lastUpdate;
 
 @end

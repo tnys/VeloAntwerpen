@@ -10,6 +10,7 @@
 #import "StationAnnotation.h"
 #import "Station.h"
 #import "StationDetailViewController.h"
+#import "SmallActivityIndicator.h"
 
 @implementation MapViewController
 
@@ -22,9 +23,25 @@
 	
 	self.navigationItem.title = @"VeloAntwerpen";
 	
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navicon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(zoomToCurrentLocation)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:[UIApplication sharedApplication].delegate action:@selector(reload)] autorelease];
+
+	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navicon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(zoomToCurrentLocation)] autorelease];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stationsUpdated:) name:STATIONS_UPDATED_NOTIFICATIONNAME object:nil];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	viewVisible = YES;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	
+	viewVisible = NO;
 }
 
 -(IBAction)zoomToCurrentLocation
@@ -55,7 +72,21 @@
 
 -(void)stationsUpdated:(NSNotification*)notif
 {
+	if (viewVisible)
+	{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[SmallActivityIndicator instance] show:NSLocalizedString(@"Updating data..", @"") inView:self.view];
+		});
+	}
+
 	[self reload];
+
+	if (viewVisible)
+	{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[SmallActivityIndicator instance] hide];
+		});
+	}
 }
 
 -(void)reload

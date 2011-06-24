@@ -10,7 +10,7 @@
 
 @implementation Station
 
-@synthesize name, latitude, longitude, free, slots;
+@synthesize name, latitude, longitude, free, slots, stationID, lastUpdate;
 
 - (id)init
 {
@@ -25,6 +25,7 @@
 -(void)dealloc
 {
 	self.name = nil;
+	self.lastUpdate = nil;
 	[super dealloc];
 }
 

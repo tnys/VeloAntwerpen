@@ -12,6 +12,7 @@
 @interface ListViewController : UIViewController {
     IBOutlet UITableView* tableView;
 	NSArray* stations;
+	BOOL viewVisible;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView* tableView;

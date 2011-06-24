@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface VeloAntwerpenAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface VeloAntwerpenAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate> {
 	NSArray* stations;
 	CLLocation* currentLocation;
 	CLLocationManager* locationManager;
+	NSTimer* reloadTimer;
 }
 
 @property (nonatomic, readonly) NSArray* stations; 

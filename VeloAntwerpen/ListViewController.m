@@ -9,6 +9,10 @@
 #import "ListViewController.h"
 #import "Station.h"
 #import "StationDetailViewController.h"
+#import "SmallActivityIndicator.h"
+#import "AsyncImageView.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ListViewController
 
@@ -19,20 +23,45 @@
 {
     [super viewDidLoad];
 
-	self.navigationItem.title = @"List";
+	self.navigationItem.title = NSLocalizedString(@"List", @"");
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:[UIApplication sharedApplication].delegate action:@selector(reload)] autorelease];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stationsUpdated:) name:STATIONS_UPDATED_NOTIFICATIONNAME object:nil];
-	
 	[[UIApplication sharedApplication].delegate reload];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	viewVisible = YES;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	
+	viewVisible = NO;
 }
 
 -(void)stationsUpdated:(NSNotification*)notif
 {
+	if (viewVisible)
+	{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[SmallActivityIndicator instance] show:NSLocalizedString(@"Updating data..", @"") inView:self.tableView];
+		});
+	}
+	
 	self.stations = [[UIApplication sharedApplication].delegate stations];
-	dispatch_async(dispatch_get_main_queue(), ^(void) {
-		[self.tableView reloadData];
-	});
+	
+	if (viewVisible)
+	{
+		dispatch_async(dispatch_get_main_queue(), ^(void) {
+			[self.tableView reloadData];
+			[[SmallActivityIndicator instance] hide];
+		});
+	}
 }
 
 #pragma mark UITableViewDelegate
@@ -58,10 +87,28 @@
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
-
+	else 
+	{
+		AsyncImageView* oldImage = (AsyncImageView*)[cell.contentView viewWithTag:999];
+		[oldImage removeFromSuperview];
+    }
+	
 	Station* s = [stations objectAtIndex:indexPath.row];
+	cell.imageView.image = [UIImage imageNamed:@"icon45_map.gif"];
+
+	CGRect frame;
+	frame.size.width=40; frame.size.height=40;
+	frame.origin.x=2; frame.origin.y=2;
+	AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
+	asyncImage.tag = 999;
+	asyncImage.layer.borderColor = [UIColor blackColor].CGColor;
+	asyncImage.layer.borderWidth = 1.0;
+	asyncImage.layer.cornerRadius = 3.0;
+	[asyncImage loadImageFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?center=%f,%f&zoom=14&size=40x40&maptype=roadmap&sensor=true", s.latitude, s.longitude]]];
+	[cell.contentView addSubview:asyncImage];
+	
 	cell.textLabel.text = s.name;
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"%d slots, %d free", s.slots, s.free];
+	cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%d slots, %d free", @""), s.slots, s.free];
 	return cell;
 }
 

@@ -13,11 +13,8 @@
 		DB14E56E13B1CD7B0030E84F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB14E56C13B1CD7B0030E84F /* InfoPlist.strings */; };
 		DB14E57113B1CD7B0030E84F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E57013B1CD7B0030E84F /* main.m */; };
 		DB14E57413B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = DB14E57313B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm */; };
-		DB14E57713B1CD7B0030E84F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB14E57513B1CD7B0030E84F /* MainWindow.xib */; };
 		DB14E57A13B1CD7B0030E84F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E57913B1CD7B0030E84F /* MapViewController.m */; };
 		DB14E57D13B1CD7B0030E84F /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E57C13B1CD7B0030E84F /* ListViewController.m */; };
-		DB14E58013B1CD7B0030E84F /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB14E57E13B1CD7B0030E84F /* MapView.xib */; };
-		DB14E58313B1CD7B0030E84F /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB14E58113B1CD7B0030E84F /* ListView.xib */; };
 		DB14E58A13B1CE6B0030E84F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E58913B1CE6B0030E84F /* MapKit.framework */; };
 		DB14E59813B1CF610030E84F /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = DB14E58C13B1CF610030E84F /* deflate.c */; };
 		DB14E59913B1CF610030E84F /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB14E58E13B1CF610030E84F /* tinystr.cpp */; };
@@ -40,6 +37,31 @@
 		DB50427413B220A600E869A3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB50427313B220A600E869A3 /* CoreLocation.framework */; };
 		DB50427713B2388800E869A3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB50427513B2388800E869A3 /* icon.png */; };
 		DB50427813B2388800E869A3 /* icon@2x in Resources */ = {isa = PBXBuildFile; fileRef = DB50427613B2388800E869A3 /* icon@2x */; };
+		DB5CF40613B47EBA00291E0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB5CF40413B47EBA00291E0E /* Localizable.strings */; };
+		DB5CF40813B47ED400291E0E /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5CF40913B47ED400291E0E /* ListView.xib */; };
+		DB5CF40A13B47EEC00291E0E /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5CF40B13B47EEC00291E0E /* MapView.xib */; };
+		DB5CF40C13B47EF800291E0E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5CF40D13B47EF800291E0E /* MainWindow.xib */; };
+		DB7EFD0713B32535007D3BD6 /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD0513B32535007D3BD6 /* 08-chat.png */; };
+		DB7EFD0813B32535007D3BD6 /* 08-chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD0613B32535007D3BD6 /* 08-chat@2x.png */; };
+		DB7EFD0E13B32572007D3BD6 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7EFD0C13B32572007D3BD6 /* ContactViewController.m */; };
+		DB7EFD0F13B32572007D3BD6 /* ContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD0D13B32572007D3BD6 /* ContactView.xib */; };
+		DB7EFD1313B327B5007D3BD6 /* ReportIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7EFD1113B327B5007D3BD6 /* ReportIssueViewController.m */; };
+		DB7EFD1413B327B5007D3BD6 /* ReportIssueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD1213B327B5007D3BD6 /* ReportIssueView.xib */; };
+		DB7EFD1A13B329E0007D3BD6 /* WEPopoverContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7EFD1613B329E0007D3BD6 /* WEPopoverContainerView.m */; };
+		DB7EFD1B13B329E0007D3BD6 /* WEPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7EFD1813B329E0007D3BD6 /* WEPopoverController.m */; };
+		DB7EFD2313B329F7007D3BD6 /* popoverArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD1D13B329F7007D3BD6 /* popoverArrowDown.png */; };
+		DB7EFD2413B329F7007D3BD6 /* popoverArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD1E13B329F7007D3BD6 /* popoverArrowLeft.png */; };
+		DB7EFD2513B329F7007D3BD6 /* popoverArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD1F13B329F7007D3BD6 /* popoverArrowRight.png */; };
+		DB7EFD2613B329F7007D3BD6 /* popoverArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD2013B329F7007D3BD6 /* popoverArrowUp.png */; };
+		DB7EFD2713B329F7007D3BD6 /* popoverBg.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD2113B329F7007D3BD6 /* popoverBg.png */; };
+		DB7EFD2813B329F7007D3BD6 /* popoverBgSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD2213B329F7007D3BD6 /* popoverBgSmall.png */; };
+		DB7EFD2D13B32ACF007D3BD6 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7EFD2B13B32ACF007D3BD6 /* TextFieldViewController.m */; };
+		DB7EFD2E13B32ACF007D3BD6 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD2C13B32ACF007D3BD6 /* TextFieldView.xib */; };
+		DB7EFD3213B3466D007D3BD6 /* TextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7EFD3013B3466D007D3BD6 /* TextViewViewController.m */; };
+		DB7EFD3313B3466D007D3BD6 /* TextViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD3113B3466D007D3BD6 /* TextViewView.xib */; };
+		DBDD432C13B3D35D001B3E7C /* SmallActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDD432B13B3D35D001B3E7C /* SmallActivityIndicator.m */; };
+		DBDD432F13B4786D001B3E7C /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDD432E13B4786C001B3E7C /* AsyncImageView.m */; };
+		DBDD433113B4792D001B3E7C /* icon45_map.gif in Resources */ = {isa = PBXBuildFile; fileRef = DBDD433013B4792D001B3E7C /* icon45_map.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,13 +75,10 @@
 		DB14E57013B1CD7B0030E84F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB14E57213B1CD7B0030E84F /* VeloAntwerpenAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VeloAntwerpenAppDelegate.h; sourceTree = "<group>"; };
 		DB14E57313B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VeloAntwerpenAppDelegate.mm; sourceTree = "<group>"; };
-		DB14E57613B1CD7B0030E84F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		DB14E57813B1CD7B0030E84F /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		DB14E57913B1CD7B0030E84F /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		DB14E57B13B1CD7B0030E84F /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		DB14E57C13B1CD7B0030E84F /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
-		DB14E57F13B1CD7B0030E84F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MapView.xib; sourceTree = "<group>"; };
-		DB14E58213B1CD7B0030E84F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ListView.xib; sourceTree = "<group>"; };
 		DB14E58913B1CE6B0030E84F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DB14E58C13B1CF610030E84F /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
 		DB14E58D13B1CF610030E84F /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflate.h; sourceTree = "<group>"; };
@@ -91,6 +110,41 @@
 		DB50427313B220A600E869A3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DB50427513B2388800E869A3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		DB50427613B2388800E869A3 /* icon@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "icon@2x"; sourceTree = "<group>"; };
+		DB5CF40513B47EBA00291E0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DB5CF40913B47ED400291E0E /* ListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListView.xib; sourceTree = "<group>"; };
+		DB5CF40B13B47EEC00291E0E /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		DB5CF40D13B47EF800291E0E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		DB5CF40E13B47F1F00291E0E /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DB7EFD0513B32535007D3BD6 /* 08-chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-chat.png"; sourceTree = "<group>"; };
+		DB7EFD0613B32535007D3BD6 /* 08-chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-chat@2x.png"; sourceTree = "<group>"; };
+		DB7EFD0B13B32572007D3BD6 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		DB7EFD0C13B32572007D3BD6 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		DB7EFD0D13B32572007D3BD6 /* ContactView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactView.xib; sourceTree = "<group>"; };
+		DB7EFD1013B327B5007D3BD6 /* ReportIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportIssueViewController.h; sourceTree = "<group>"; };
+		DB7EFD1113B327B5007D3BD6 /* ReportIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportIssueViewController.m; sourceTree = "<group>"; };
+		DB7EFD1213B327B5007D3BD6 /* ReportIssueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportIssueView.xib; sourceTree = "<group>"; };
+		DB7EFD1513B329E0007D3BD6 /* WEPopoverContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEPopoverContainerView.h; sourceTree = "<group>"; };
+		DB7EFD1613B329E0007D3BD6 /* WEPopoverContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEPopoverContainerView.m; sourceTree = "<group>"; };
+		DB7EFD1713B329E0007D3BD6 /* WEPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEPopoverController.h; sourceTree = "<group>"; };
+		DB7EFD1813B329E0007D3BD6 /* WEPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEPopoverController.m; sourceTree = "<group>"; };
+		DB7EFD1913B329E0007D3BD6 /* WEPopoverParentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEPopoverParentView.h; sourceTree = "<group>"; };
+		DB7EFD1D13B329F7007D3BD6 /* popoverArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowDown.png; sourceTree = "<group>"; };
+		DB7EFD1E13B329F7007D3BD6 /* popoverArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowLeft.png; sourceTree = "<group>"; };
+		DB7EFD1F13B329F7007D3BD6 /* popoverArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowRight.png; sourceTree = "<group>"; };
+		DB7EFD2013B329F7007D3BD6 /* popoverArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowUp.png; sourceTree = "<group>"; };
+		DB7EFD2113B329F7007D3BD6 /* popoverBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverBg.png; sourceTree = "<group>"; };
+		DB7EFD2213B329F7007D3BD6 /* popoverBgSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverBgSmall.png; sourceTree = "<group>"; };
+		DB7EFD2A13B32ACF007D3BD6 /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
+		DB7EFD2B13B32ACF007D3BD6 /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		DB7EFD2C13B32ACF007D3BD6 /* TextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
+		DB7EFD2F13B3466D007D3BD6 /* TextViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewViewController.h; sourceTree = "<group>"; };
+		DB7EFD3013B3466D007D3BD6 /* TextViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewViewController.m; sourceTree = "<group>"; };
+		DB7EFD3113B3466D007D3BD6 /* TextViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewView.xib; sourceTree = "<group>"; };
+		DBDD432A13B3D35D001B3E7C /* SmallActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallActivityIndicator.h; sourceTree = "<group>"; };
+		DBDD432B13B3D35D001B3E7C /* SmallActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallActivityIndicator.m; sourceTree = "<group>"; };
+		DBDD432D13B4786C001B3E7C /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		DBDD432E13B4786C001B3E7C /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		DBDD433013B4792D001B3E7C /* icon45_map.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icon45_map.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +197,7 @@
 		DB14E56913B1CD7B0030E84F /* VeloAntwerpen */ = {
 			isa = PBXGroup;
 			children = (
+				DB7EFD0A13B3255D007D3BD6 /* Contact */,
 				DB50426E13B21A9900E869A3 /* Model */,
 				DB50426813B218A200E869A3 /* List */,
 				DB50426713B2189C00E869A3 /* Map */,
@@ -150,7 +205,7 @@
 				DB14E57213B1CD7B0030E84F /* VeloAntwerpenAppDelegate.h */,
 				DB14E57313B1CD7B0030E84F /* VeloAntwerpenAppDelegate.mm */,
 				DB50427213B21C4B00E869A3 /* Keys.h */,
-				DB14E57513B1CD7B0030E84F /* MainWindow.xib */,
+				DB5CF40D13B47EF800291E0E /* MainWindow.xib */,
 				DB14E56A13B1CD7B0030E84F /* Supporting Files */,
 			);
 			path = VeloAntwerpen;
@@ -159,6 +214,10 @@
 		DB14E56A13B1CD7B0030E84F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB5CF40413B47EBA00291E0E /* Localizable.strings */,
+				DBDD433013B4792D001B3E7C /* icon45_map.gif */,
+				DB7EFD0513B32535007D3BD6 /* 08-chat.png */,
+				DB7EFD0613B32535007D3BD6 /* 08-chat@2x.png */,
 				DB19B04B13B28C770060C98F /* Default.png */,
 				DB50427513B2388800E869A3 /* icon.png */,
 				DB50427613B2388800E869A3 /* icon@2x */,
@@ -197,6 +256,11 @@
 		DB50426613B2188F00E869A3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DBDD432D13B4786C001B3E7C /* AsyncImageView.h */,
+				DBDD432E13B4786C001B3E7C /* AsyncImageView.m */,
+				DBDD432A13B3D35D001B3E7C /* SmallActivityIndicator.h */,
+				DBDD432B13B3D35D001B3E7C /* SmallActivityIndicator.m */,
+				DB7EFD1C13B329E5007D3BD6 /* Popover */,
 				DB14E58B13B1CF610030E84F /* TinyXML */,
 			);
 			name = Utils;
@@ -209,7 +273,7 @@
 				DB14E5A213B1D3B30030E84F /* StationAnnotation.m */,
 				DB14E57813B1CD7B0030E84F /* MapViewController.h */,
 				DB14E57913B1CD7B0030E84F /* MapViewController.m */,
-				DB14E57E13B1CD7B0030E84F /* MapView.xib */,
+				DB5CF40B13B47EEC00291E0E /* MapView.xib */,
 				DB50426913B218D500E869A3 /* StationDetailViewController.h */,
 				DB50426A13B218D500E869A3 /* StationDetailViewController.m */,
 				DB50426B13B218D500E869A3 /* StationDetailView.xib */,
@@ -222,7 +286,7 @@
 			children = (
 				DB14E57B13B1CD7B0030E84F /* ListViewController.h */,
 				DB14E57C13B1CD7B0030E84F /* ListViewController.m */,
-				DB14E58113B1CD7B0030E84F /* ListView.xib */,
+				DB5CF40913B47ED400291E0E /* ListView.xib */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -234,6 +298,51 @@
 				DB50427013B21AAC00E869A3 /* Station.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		DB7EFD0A13B3255D007D3BD6 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				DB7EFD0B13B32572007D3BD6 /* ContactViewController.h */,
+				DB7EFD0C13B32572007D3BD6 /* ContactViewController.m */,
+				DB7EFD0D13B32572007D3BD6 /* ContactView.xib */,
+				DB7EFD1013B327B5007D3BD6 /* ReportIssueViewController.h */,
+				DB7EFD1113B327B5007D3BD6 /* ReportIssueViewController.m */,
+				DB7EFD1213B327B5007D3BD6 /* ReportIssueView.xib */,
+				DB7EFD2A13B32ACF007D3BD6 /* TextFieldViewController.h */,
+				DB7EFD2B13B32ACF007D3BD6 /* TextFieldViewController.m */,
+				DB7EFD2C13B32ACF007D3BD6 /* TextFieldView.xib */,
+				DB7EFD2F13B3466D007D3BD6 /* TextViewViewController.h */,
+				DB7EFD3013B3466D007D3BD6 /* TextViewViewController.m */,
+				DB7EFD3113B3466D007D3BD6 /* TextViewView.xib */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		DB7EFD1C13B329E5007D3BD6 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				DB7EFD2913B329FB007D3BD6 /* Resources */,
+				DB7EFD1513B329E0007D3BD6 /* WEPopoverContainerView.h */,
+				DB7EFD1613B329E0007D3BD6 /* WEPopoverContainerView.m */,
+				DB7EFD1713B329E0007D3BD6 /* WEPopoverController.h */,
+				DB7EFD1813B329E0007D3BD6 /* WEPopoverController.m */,
+				DB7EFD1913B329E0007D3BD6 /* WEPopoverParentView.h */,
+			);
+			name = Popover;
+			sourceTree = "<group>";
+		};
+		DB7EFD2913B329FB007D3BD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB7EFD1D13B329F7007D3BD6 /* popoverArrowDown.png */,
+				DB7EFD1E13B329F7007D3BD6 /* popoverArrowLeft.png */,
+				DB7EFD1F13B329F7007D3BD6 /* popoverArrowRight.png */,
+				DB7EFD2013B329F7007D3BD6 /* popoverArrowUp.png */,
+				DB7EFD2113B329F7007D3BD6 /* popoverBg.png */,
+				DB7EFD2213B329F7007D3BD6 /* popoverBgSmall.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +380,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				nl,
 			);
 			mainGroup = DB14E55413B1CD7B0030E84F;
 			productRefGroup = DB14E56013B1CD7B0030E84F /* Products */;
@@ -288,9 +398,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB14E56E13B1CD7B0030E84F /* InfoPlist.strings in Resources */,
-				DB14E57713B1CD7B0030E84F /* MainWindow.xib in Resources */,
-				DB14E58013B1CD7B0030E84F /* MapView.xib in Resources */,
-				DB14E58313B1CD7B0030E84F /* ListView.xib in Resources */,
+				DB5CF40C13B47EF800291E0E /* MainWindow.xib in Resources */,
+				DB5CF40A13B47EEC00291E0E /* MapView.xib in Resources */,
+				DB5CF40813B47ED400291E0E /* ListView.xib in Resources */,
 				DB50425C13B1D7B000E869A3 /* list.png in Resources */,
 				DB50425F13B1D7C600E869A3 /* navicon.png in Resources */,
 				DB50426213B1D80300E869A3 /* 103-map.png in Resources */,
@@ -300,6 +410,20 @@
 				DB50427713B2388800E869A3 /* icon.png in Resources */,
 				DB50427813B2388800E869A3 /* icon@2x in Resources */,
 				DB19B04C13B28C770060C98F /* Default.png in Resources */,
+				DB7EFD0713B32535007D3BD6 /* 08-chat.png in Resources */,
+				DB7EFD0813B32535007D3BD6 /* 08-chat@2x.png in Resources */,
+				DB7EFD0F13B32572007D3BD6 /* ContactView.xib in Resources */,
+				DB7EFD1413B327B5007D3BD6 /* ReportIssueView.xib in Resources */,
+				DB7EFD2313B329F7007D3BD6 /* popoverArrowDown.png in Resources */,
+				DB7EFD2413B329F7007D3BD6 /* popoverArrowLeft.png in Resources */,
+				DB7EFD2513B329F7007D3BD6 /* popoverArrowRight.png in Resources */,
+				DB7EFD2613B329F7007D3BD6 /* popoverArrowUp.png in Resources */,
+				DB7EFD2713B329F7007D3BD6 /* popoverBg.png in Resources */,
+				DB7EFD2813B329F7007D3BD6 /* popoverBgSmall.png in Resources */,
+				DB7EFD2E13B32ACF007D3BD6 /* TextFieldView.xib in Resources */,
+				DB7EFD3313B3466D007D3BD6 /* TextViewView.xib in Resources */,
+				DBDD433113B4792D001B3E7C /* icon45_map.gif in Resources */,
+				DB5CF40613B47EBA00291E0E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +448,14 @@
 				DB14E5A313B1D3B30030E84F /* StationAnnotation.m in Sources */,
 				DB50426C13B218D500E869A3 /* StationDetailViewController.m in Sources */,
 				DB50427113B21AAC00E869A3 /* Station.m in Sources */,
+				DB7EFD0E13B32572007D3BD6 /* ContactViewController.m in Sources */,
+				DB7EFD1313B327B5007D3BD6 /* ReportIssueViewController.m in Sources */,
+				DB7EFD1A13B329E0007D3BD6 /* WEPopoverContainerView.m in Sources */,
+				DB7EFD1B13B329E0007D3BD6 /* WEPopoverController.m in Sources */,
+				DB7EFD2D13B32ACF007D3BD6 /* TextFieldViewController.m in Sources */,
+				DB7EFD3213B3466D007D3BD6 /* TextViewViewController.m in Sources */,
+				DBDD432C13B3D35D001B3E7C /* SmallActivityIndicator.m in Sources */,
+				DBDD432F13B4786D001B3E7C /* AsyncImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,28 +470,13 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		DB14E57513B1CD7B0030E84F /* MainWindow.xib */ = {
+		DB5CF40413B47EBA00291E0E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DB14E57613B1CD7B0030E84F /* en */,
+				DB5CF40513B47EBA00291E0E /* en */,
+				DB5CF40E13B47F1F00291E0E /* nl */,
 			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		DB14E57E13B1CD7B0030E84F /* MapView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB14E57F13B1CD7B0030E84F /* en */,
-			);
-			name = MapView.xib;
-			sourceTree = "<group>";
-		};
-		DB14E58113B1CD7B0030E84F /* ListView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB14E58213B1CD7B0030E84F /* en */,
-			);
-			name = ListView.xib;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
