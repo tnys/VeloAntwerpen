@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9844B3ED13B9F42F00619BCA /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 9844B3EC13B9F42F00619BCA /* map.png */; };
 		DB14E56413B1CD7B0030E84F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E56313B1CD7B0030E84F /* UIKit.framework */; };
 		DB14E56613B1CD7B0030E84F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E56513B1CD7B0030E84F /* Foundation.framework */; };
 		DB14E56813B1CD7B0030E84F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14E56713B1CD7B0030E84F /* CoreGraphics.framework */; };
@@ -59,12 +60,22 @@
 		DB7EFD2E13B32ACF007D3BD6 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD2C13B32ACF007D3BD6 /* TextFieldView.xib */; };
 		DB7EFD3213B3466D007D3BD6 /* TextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7EFD3013B3466D007D3BD6 /* TextViewViewController.m */; };
 		DB7EFD3313B3466D007D3BD6 /* TextViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7EFD3113B3466D007D3BD6 /* TextViewView.xib */; };
+		DBA13A4013B5CC81001BFFA5 /* TextFieldViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA13A3E13B5CC81001BFFA5 /* TextFieldViewController2.m */; };
+		DBA13A4113B5CC81001BFFA5 /* TextFieldView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA13A3F13B5CC81001BFFA5 /* TextFieldView2.xib */; };
+		DBA13A4413B5CD04001BFFA5 /* ReportBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA13A4313B5CD04001BFFA5 /* ReportBackViewController.m */; };
+		DBA13A4813B5CDB0001BFFA5 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA13A4613B5CDB0001BFFA5 /* CategoryViewController.m */; };
+		DBA13A4913B5CDB0001BFFA5 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA13A4713B5CDB0001BFFA5 /* CategoryView.xib */; };
+		DBA13A4D13B5CEC7001BFFA5 /* TextViewViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA13A4B13B5CEC7001BFFA5 /* TextViewViewController2.m */; };
+		DBA13A4E13B5CEC7001BFFA5 /* TextViewView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA13A4C13B5CEC7001BFFA5 /* TextViewView2.xib */; };
+		DBA13A5013B603C0001BFFA5 /* velo_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA13A4F13B603C0001BFFA5 /* velo_logo.png */; };
 		DBDD432C13B3D35D001B3E7C /* SmallActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDD432B13B3D35D001B3E7C /* SmallActivityIndicator.m */; };
 		DBDD432F13B4786D001B3E7C /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDD432E13B4786C001B3E7C /* AsyncImageView.m */; };
 		DBDD433113B4792D001B3E7C /* icon45_map.gif in Resources */ = {isa = PBXBuildFile; fileRef = DBDD433013B4792D001B3E7C /* icon45_map.gif */; };
+		DBF233ED13B7BBE000569798 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBF233EC13B7BBE000569798 /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9844B3EC13B9F42F00619BCA /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		DB14E55F13B1CD7B0030E84F /* VeloAntwerpen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeloAntwerpen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB14E56313B1CD7B0030E84F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DB14E56513B1CD7B0030E84F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,11 +151,24 @@
 		DB7EFD2F13B3466D007D3BD6 /* TextViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewViewController.h; sourceTree = "<group>"; };
 		DB7EFD3013B3466D007D3BD6 /* TextViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewViewController.m; sourceTree = "<group>"; };
 		DB7EFD3113B3466D007D3BD6 /* TextViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewView.xib; sourceTree = "<group>"; };
+		DBA13A3D13B5CC81001BFFA5 /* TextFieldViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController2.h; sourceTree = "<group>"; };
+		DBA13A3E13B5CC81001BFFA5 /* TextFieldViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController2.m; sourceTree = "<group>"; };
+		DBA13A3F13B5CC81001BFFA5 /* TextFieldView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldView2.xib; sourceTree = "<group>"; };
+		DBA13A4213B5CD04001BFFA5 /* ReportBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportBackViewController.h; sourceTree = "<group>"; };
+		DBA13A4313B5CD04001BFFA5 /* ReportBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportBackViewController.m; sourceTree = "<group>"; };
+		DBA13A4513B5CDB0001BFFA5 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		DBA13A4613B5CDB0001BFFA5 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		DBA13A4713B5CDB0001BFFA5 /* CategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
+		DBA13A4A13B5CEC7001BFFA5 /* TextViewViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewViewController2.h; sourceTree = "<group>"; };
+		DBA13A4B13B5CEC7001BFFA5 /* TextViewViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewViewController2.m; sourceTree = "<group>"; };
+		DBA13A4C13B5CEC7001BFFA5 /* TextViewView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewView2.xib; sourceTree = "<group>"; };
+		DBA13A4F13B603C0001BFFA5 /* velo_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velo_logo.png; sourceTree = "<group>"; };
 		DBDD432A13B3D35D001B3E7C /* SmallActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallActivityIndicator.h; sourceTree = "<group>"; };
 		DBDD432B13B3D35D001B3E7C /* SmallActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallActivityIndicator.m; sourceTree = "<group>"; };
 		DBDD432D13B4786C001B3E7C /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		DBDD432E13B4786C001B3E7C /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		DBDD433013B4792D001B3E7C /* icon45_map.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icon45_map.gif; sourceTree = "<group>"; };
+		DBF233EC13B7BBE000569798 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +241,7 @@
 				DB5CF40413B47EBA00291E0E /* Localizable.strings */,
 				DBDD433013B4792D001B3E7C /* icon45_map.gif */,
 				DB7EFD0513B32535007D3BD6 /* 08-chat.png */,
+				DBA13A4F13B603C0001BFFA5 /* velo_logo.png */,
 				DB7EFD0613B32535007D3BD6 /* 08-chat@2x.png */,
 				DB19B04B13B28C770060C98F /* Default.png */,
 				DB50427513B2388800E869A3 /* icon.png */,
@@ -224,12 +249,14 @@
 				DB50426413B1D83800E869A3 /* navicon@2x.png */,
 				DB50426013B1D80300E869A3 /* 103-map.png */,
 				DB50426113B1D80300E869A3 /* 103-map@2x.png */,
+				9844B3EC13B9F42F00619BCA /* map.png */,
 				DB50425E13B1D7C600E869A3 /* navicon.png */,
 				DB50425B13B1D7B000E869A3 /* list.png */,
 				DB14E56B13B1CD7B0030E84F /* VeloAntwerpen-Info.plist */,
 				DB14E56C13B1CD7B0030E84F /* InfoPlist.strings */,
 				DB14E56F13B1CD7B0030E84F /* VeloAntwerpen-Prefix.pch */,
 				DB14E57013B1CD7B0030E84F /* main.m */,
+				DBF233EC13B7BBE000569798 /* Entitlements.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -303,6 +330,7 @@
 		DB7EFD0A13B3255D007D3BD6 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				DBA13A3B13B5CC60001BFFA5 /* Method2 */,
 				DB7EFD0B13B32572007D3BD6 /* ContactViewController.h */,
 				DB7EFD0C13B32572007D3BD6 /* ContactViewController.m */,
 				DB7EFD0D13B32572007D3BD6 /* ContactView.xib */,
@@ -343,6 +371,24 @@
 				DB7EFD2213B329F7007D3BD6 /* popoverBgSmall.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		DBA13A3B13B5CC60001BFFA5 /* Method2 */ = {
+			isa = PBXGroup;
+			children = (
+				DBA13A3D13B5CC81001BFFA5 /* TextFieldViewController2.h */,
+				DBA13A3E13B5CC81001BFFA5 /* TextFieldViewController2.m */,
+				DBA13A3F13B5CC81001BFFA5 /* TextFieldView2.xib */,
+				DBA13A4213B5CD04001BFFA5 /* ReportBackViewController.h */,
+				DBA13A4313B5CD04001BFFA5 /* ReportBackViewController.m */,
+				DBA13A4513B5CDB0001BFFA5 /* CategoryViewController.h */,
+				DBA13A4613B5CDB0001BFFA5 /* CategoryViewController.m */,
+				DBA13A4713B5CDB0001BFFA5 /* CategoryView.xib */,
+				DBA13A4A13B5CEC7001BFFA5 /* TextViewViewController2.h */,
+				DBA13A4B13B5CEC7001BFFA5 /* TextViewViewController2.m */,
+				DBA13A4C13B5CEC7001BFFA5 /* TextViewView2.xib */,
+			);
+			name = Method2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +470,12 @@
 				DB7EFD3313B3466D007D3BD6 /* TextViewView.xib in Resources */,
 				DBDD433113B4792D001B3E7C /* icon45_map.gif in Resources */,
 				DB5CF40613B47EBA00291E0E /* Localizable.strings in Resources */,
+				DBA13A4113B5CC81001BFFA5 /* TextFieldView2.xib in Resources */,
+				DBA13A4913B5CDB0001BFFA5 /* CategoryView.xib in Resources */,
+				DBA13A4E13B5CEC7001BFFA5 /* TextViewView2.xib in Resources */,
+				DBA13A5013B603C0001BFFA5 /* velo_logo.png in Resources */,
+				DBF233ED13B7BBE000569798 /* Entitlements.plist in Resources */,
+				9844B3ED13B9F42F00619BCA /* map.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +508,10 @@
 				DB7EFD3213B3466D007D3BD6 /* TextViewViewController.m in Sources */,
 				DBDD432C13B3D35D001B3E7C /* SmallActivityIndicator.m in Sources */,
 				DBDD432F13B4786D001B3E7C /* AsyncImageView.m in Sources */,
+				DBA13A4013B5CC81001BFFA5 /* TextFieldViewController2.m in Sources */,
+				DBA13A4413B5CD04001BFFA5 /* ReportBackViewController.m in Sources */,
+				DBA13A4813B5CDB0001BFFA5 /* CategoryViewController.m in Sources */,
+				DBA13A4D13B5CEC7001BFFA5 /* TextViewViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = VeloAntwerpen/Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

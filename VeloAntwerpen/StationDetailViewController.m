@@ -42,13 +42,10 @@
 			self.view;
 			nameLbl.text = station.name;
 			
-			dispatch_async(dispatch_get_global_queue(0, 0), ^(void) {
-				UIImage* img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?center=%f,%f&zoom=14&size=85x85&maptype=roadmap&sensor=true", station.latitude, station.longitude]]]];
-				dispatch_async(dispatch_get_main_queue(), ^(void) {
-					self.mapView.image = img;
-				});
-			});
-
+			[station thumbnailImage:^(UIImage *img) {
+				self.mapView.image = img;
+			}];
+			
 			[reverseGeocoder cancel];
 			[reverseGeocoder release];
 			[detailedLocation release];

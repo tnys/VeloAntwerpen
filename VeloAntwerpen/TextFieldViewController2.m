@@ -1,23 +1,23 @@
 //
-//  ContactViewController.m
+//  TextFieldViewController2.m
 //  VeloAntwerpen
 //
-//  Created by Tom Nys on 23/06/11.
+//  Created by Tom Nys on 25/06/11.
 //  Copyright 2011 Netwalk VOF. All rights reserved.
 //
 
-#import "ContactViewController.h"
-#import "ReportIssueViewController.h"
+#import "TextFieldViewController2.h"
 
-@implementation ContactViewController
 
-@synthesize reportBtn, reportLbl;
+@implementation TextFieldViewController2
+
+
+@synthesize textField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -35,26 +35,30 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
--(IBAction)reportIssue:(id)btn
+
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-	ReportIssueViewController* ctrl = [[[ReportIssueViewController alloc] initWithNibName:@"ReportIssueView" bundle:[NSBundle mainBundle]] autorelease];
-	[self.navigationController pushViewController:ctrl animated:YES];
+	[delegate textWasFinished:textField.text forKey:key];
+	[self.navigationController popViewControllerAnimated:YES];
+	
+	return YES;
 }
 
--(IBAction)veloAntwerpenLink:(id)btn
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.velo-antwerpen.be/"]];
+	[textField resignFirstResponder];
+	
+	return YES;
 }
-
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.title = NSLocalizedString(@"Contact", @"");
-	self.reportLbl.text = NSLocalizedString(@"Problems with your bicycle? Report them now!", @"");
-	[self.reportBtn setTitle:NSLocalizedString(@"Report problem", @"") forState:UIControlStateNormal];
+	[textField becomeFirstResponder];
+	self.title = NSLocalizedString(@"Bicycle ID", @"");
 }
 
 - (void)viewDidUnload

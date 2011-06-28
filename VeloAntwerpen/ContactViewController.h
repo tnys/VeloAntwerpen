@@ -18,5 +18,6 @@
 @property (nonatomic, retain) IBOutlet UIButton* reportBtn;
 
 -(IBAction)reportIssue:(id)btn;
+-(IBAction)veloAntwerpenLink:(id)btn;
 
 @end

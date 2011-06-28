@@ -1,17 +1,18 @@
 //
-//  ContactViewController.m
+//  ReportBackViewController.m
 //  VeloAntwerpen
 //
-//  Created by Tom Nys on 23/06/11.
+//  Created by Tom Nys on 25/06/11.
 //  Copyright 2011 Netwalk VOF. All rights reserved.
 //
 
-#import "ContactViewController.h"
-#import "ReportIssueViewController.h"
+#import "ReportBackViewController.h"
 
-@implementation ContactViewController
 
-@synthesize reportBtn, reportLbl;
+@implementation ReportBackViewController
+
+@synthesize delegate;
+@synthesize key;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,27 +36,22 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
--(IBAction)reportIssue:(id)btn
-{
-	ReportIssueViewController* ctrl = [[[ReportIssueViewController alloc] initWithNibName:@"ReportIssueView" bundle:[NSBundle mainBundle]] autorelease];
-	[self.navigationController pushViewController:ctrl animated:YES];
-}
-
--(IBAction)veloAntwerpenLink:(id)btn
-{
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.velo-antwerpen.be/"]];
-}
-
-
 #pragma mark - View lifecycle
 
+/*
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView
+{
+}
+*/
+
+/*
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.title = NSLocalizedString(@"Contact", @"");
-	self.reportLbl.text = NSLocalizedString(@"Problems with your bicycle? Report them now!", @"");
-	[self.reportBtn setTitle:NSLocalizedString(@"Report problem", @"") forState:UIControlStateNormal];
 }
+*/
 
 - (void)viewDidUnload
 {

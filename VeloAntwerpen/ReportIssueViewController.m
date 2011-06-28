@@ -11,6 +11,10 @@
 #import "TextViewViewController.h"
 #import "SmallActivityIndicator.h"
 
+#import "TextFieldViewController2.h"
+#import "TextViewViewController2.h"
+#import "CategoryViewController.h"
+
 @implementation ReportIssueViewController
 
 @synthesize popoverController, bikeId, description, category;
@@ -45,7 +49,6 @@
     [super viewDidLoad];
 	
 	self.title = NSLocalizedString(@"Report problem", @"");
-	currentPopoverCellIndex = -1;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -242,58 +245,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BOOL shouldShowNewPopover = indexPath.row != currentPopoverCellIndex;
-	
-	if (self.popoverController) {
-		[self.popoverController dismissPopoverAnimated:YES];
-		self.popoverController = nil;
-		currentPopoverCellIndex = -1;
-	}
-	
 	if (indexPath.section == 0)
 	{
 		if (indexPath.row < 3)
 		{
-			if (shouldShowNewPopover) {
-				UIViewController* contentViewController = nil;
-				
-				if (indexPath.row == 0)
-				{
-					contentViewController = [[TextFieldViewController alloc] initWithNibName:@"TextFieldView" bundle:[NSBundle mainBundle]];
-					((TextFieldViewController*)contentViewController).delegate = self;
-					((TextFieldViewController*)contentViewController).key = @"ID";
-					((TextFieldViewController*)contentViewController).textField.placeholder = NSLocalizedString(@"Bicycle ID", @"");
-				}
-				else if (indexPath.row == 1)
-				{
-					contentViewController = [[TextFieldViewController alloc] initWithNibName:@"TextFieldView" bundle:[NSBundle mainBundle]];
-					((TextFieldViewController*)contentViewController).delegate = self;
-					((TextFieldViewController*)contentViewController).key = @"Type";
-					((TextFieldViewController*)contentViewController).textField.placeholder = NSLocalizedString(@"Steer/Tire/Brakes/...", @"");
-				}
-				else if (indexPath.row == 2)
-				{
-					contentViewController = [[TextViewViewController alloc] initWithNibName:@"TextViewView" bundle:[NSBundle mainBundle]];
-					((TextViewViewController*)contentViewController).delegate = self;
-					((TextViewViewController*)contentViewController).key = @"Description";
-				}
-				
-				CGRect frame = [tableView cellForRowAtIndexPath:indexPath].frame;
-				
-				int arrowDirections = UIPopoverArrowDirectionDown|UIPopoverArrowDirectionUp;
-				if (indexPath.row == 2)
-					arrowDirections = UIPopoverArrowDirectionDown;
-				self.popoverController = [[[WEPopoverController alloc] initWithContentViewController:contentViewController] autorelease];
-				[contentViewController setPopover:popoverController];
-				[self.popoverController presentPopoverFromRect:CGRectMake(frame.origin.x, frame.origin.y + frame.size.height - 1, frame.size.width, 1) 
-														inView:self.view 
-									  permittedArrowDirections:arrowDirections
-													  animated:YES];
-				
-				currentPopoverCellIndex = indexPath.row;
-				
-				[contentViewController release];
+			ReportBackViewController* contentViewController = nil;
+			
+			if (indexPath.row == 0)
+			{
+				contentViewController = [[TextFieldViewController2 alloc] initWithNibName:@"TextFieldView2" bundle:[NSBundle mainBundle]];
+				contentViewController.view;
+				contentViewController.key = @"ID";
+				((TextFieldViewController2*)contentViewController).textField.text = self.bikeId;
+				((TextFieldViewController2*)contentViewController).textField.placeholder = NSLocalizedString(@"Bicycle ID", @"");
 			}
+			else if (indexPath.row == 1)
+			{
+				contentViewController = [[CategoryViewController alloc] initWithNibName:@"CategoryView" bundle:[NSBundle mainBundle]];
+				contentViewController.key = @"Type";
+				((CategoryViewController*)contentViewController).selectedCategory = self.category;
+				((CategoryViewController*)contentViewController).categories = [NSArray arrayWithObjects:NSLocalizedString(@"Steer", @""), 
+													NSLocalizedString(@"Brakes", @""),
+													NSLocalizedString(@"Tire", @""),
+													NSLocalizedString(@"Light", @""),
+													nil];
+				
+			}
+			else if (indexPath.row == 2)
+			{
+				contentViewController = [[TextViewViewController2 alloc] initWithNibName:@"TextViewView2" bundle:[NSBundle mainBundle]];
+				contentViewController.view;
+				contentViewController.key = @"Description";
+				((TextViewViewController2*)contentViewController).textView.text = self.description;
+			}
+
+			contentViewController.delegate = self;
+
+			[self.navigationController pushViewController:contentViewController animated:YES];
+						
+			[contentViewController release];
 		}
 		else if (indexPath.row == 3)
 		{

@@ -25,9 +25,12 @@
 }
 
 
-- (void)loadImageFromURL:(NSURL*)url {
+- (void)loadImageFromURL:(NSURL*)url andSaveIn:(NSString*)path {
 	if (connection!=nil) { [connection release]; } //in case we are downloading a 2nd image
 	if (data!=nil) { [data release]; }
+	if (filename!=nil) {[filename release];}
+	
+	filename = [path retain];
 	
 	NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
 	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self]; //notice how delegate set to self object
@@ -50,6 +53,9 @@
 		//then this must be another image, the old one is still in subviews
 		[[[self subviews] objectAtIndex:0] removeFromSuperview]; //so remove it (releases it also)
 	}
+	
+	if (filename)
+		[data writeToFile:filename atomically:YES];
 	
 	//make an image view for the image
 	UIImageView* imageView = [[[UIImageView alloc] initWithImage:[UIImage imageWithData:data]] autorelease];

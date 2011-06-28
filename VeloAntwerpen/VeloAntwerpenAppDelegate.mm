@@ -17,7 +17,7 @@
 @implementation VeloAntwerpenAppDelegate
 
 
-@synthesize window=_window, stations, currentLocation;
+@synthesize window=_window, stations, currentLocation, networkQueue;
 
 @synthesize tabBarController=_tabBarController;
 
@@ -100,6 +100,8 @@
 	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 	[locationManager startUpdatingLocation];
 	
+	networkQueue = dispatch_queue_create("networkqueue", 0);
+	
 	reloadTimer = [NSTimer scheduledTimerWithTimeInterval:REFRESHVALUE target:self selector:@selector(reload:) userInfo:nil repeats:YES];
 
 	[self reload];
@@ -152,6 +154,7 @@
 
 - (void)dealloc
 {
+	dispatch_release(networkQueue);
 	[reloadTimer invalidate];
 	reloadTimer = nil;
 	[stations release];

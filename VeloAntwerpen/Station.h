@@ -25,4 +25,10 @@
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSDate* lastUpdate;
 
+-(UIImage*)tableViewImage;
+-(NSString*)tableViewImageFilename;
+
+-(void)thumbnailImage:(void (^)(UIImage*))block;
+-(NSString*)thumbnailImageFilename;
+
 @end

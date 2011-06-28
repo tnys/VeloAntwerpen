@@ -86,26 +86,39 @@
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		cell.imageView.layer.borderColor = [UIColor blackColor].CGColor;
 	}
 	else 
 	{
 		AsyncImageView* oldImage = (AsyncImageView*)[cell.contentView viewWithTag:999];
 		[oldImage removeFromSuperview];
     }
-	
-	Station* s = [stations objectAtIndex:indexPath.row];
-	cell.imageView.image = [UIImage imageNamed:@"icon45_map.gif"];
 
-	CGRect frame;
-	frame.size.width=40; frame.size.height=40;
-	frame.origin.x=2; frame.origin.y=2;
-	AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
-	asyncImage.tag = 999;
-	asyncImage.layer.borderColor = [UIColor blackColor].CGColor;
-	asyncImage.layer.borderWidth = 1.0;
-	asyncImage.layer.cornerRadius = 3.0;
-	[asyncImage loadImageFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?center=%f,%f&zoom=14&size=40x40&maptype=roadmap&sensor=true", s.latitude, s.longitude]]];
-	[cell.contentView addSubview:asyncImage];
+		
+	Station* s = [stations objectAtIndex:indexPath.row];
+	cell.imageView.image = [s tableViewImage];
+	cell.imageView.layer.borderWidth = 0;
+	cell.imageView.layer.cornerRadius = 0;
+	
+	if (!cell.imageView.image)
+	{
+		cell.imageView.image = [UIImage imageNamed:@"map.png"];
+		CGRect frame;
+		frame.size.width=40; frame.size.height=40;
+		frame.origin.x=2; frame.origin.y=2;
+		AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
+		asyncImage.tag = 999;
+		asyncImage.layer.borderColor = [UIColor blackColor].CGColor;
+		asyncImage.layer.borderWidth = 1.0;
+		asyncImage.layer.cornerRadius = 3.0;
+		[asyncImage loadImageFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?center=%f,%f&zoom=14&size=40x40&maptype=roadmap&sensor=true", s.latitude, s.longitude]] andSaveIn:[s tableViewImageFilename]];
+		[cell.contentView addSubview:asyncImage];
+	}
+	else
+	{
+		cell.imageView.layer.borderWidth = 1.0;
+		cell.imageView.layer.cornerRadius = 3.0;
+	}
 	
 	cell.textLabel.text = s.name;
 	cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%d slots, %d free", @""), s.slots, s.free];

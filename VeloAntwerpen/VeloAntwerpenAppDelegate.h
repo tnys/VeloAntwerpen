@@ -14,6 +14,7 @@
 	CLLocation* currentLocation;
 	CLLocationManager* locationManager;
 	NSTimer* reloadTimer;
+	dispatch_queue_t networkQueue;
 }
 
 @property (nonatomic, readonly) NSArray* stations; 
@@ -22,5 +23,6 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic) dispatch_queue_t networkQueue;
 
 @end
