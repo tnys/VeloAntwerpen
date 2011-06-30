@@ -50,11 +50,7 @@
 	
 	self.title = NSLocalizedString(@"Report problem", @"");
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	[[GANTracker sharedTracker] trackPageview:@"/ReportIssue" withError:nil];
 }
 
 - (void)viewDidUnload
@@ -92,6 +88,8 @@
 
 -(IBAction)reportTapped:(id)btn
 {
+	[[GANTracker sharedTracker] trackEvent:@"sendReport" action:@"tap" label:nil value:-1 withError:nil];
+
 	[[SmallActivityIndicator instance] show:NSLocalizedString(@"Sending report..", @"") inView:self.view];
 	
 	double delayInSeconds = 2.0;
@@ -219,6 +217,8 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+	[[GANTracker sharedTracker] trackEvent:@"reportImageSelected" action:@"callback" label:nil value:-1 withError:nil];
+
 	[photo release];
 	photo = [[info valueForKey:UIImagePickerControllerEditedImage] retain];
 	[self.tableView reloadData];
@@ -227,6 +227,8 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
+	[[GANTracker sharedTracker] trackEvent:@"reportImageCancelled" action:@"callback" label:nil value:-1 withError:nil];
+
 	[picker dismissModalViewControllerAnimated:YES];
 }
 
@@ -253,6 +255,8 @@
 			
 			if (indexPath.row == 0)
 			{
+				[[GANTracker sharedTracker] trackEvent:@"reportBicycleID" action:@"tap" label:nil value:-1 withError:nil];
+
 				contentViewController = [[TextFieldViewController2 alloc] initWithNibName:@"TextFieldView2" bundle:[NSBundle mainBundle]];
 				contentViewController.view;
 				contentViewController.key = @"ID";
@@ -261,18 +265,29 @@
 			}
 			else if (indexPath.row == 1)
 			{
+				[[GANTracker sharedTracker] trackEvent:@"reportCategory" action:@"tap" label:nil value:-1 withError:nil];
+
 				contentViewController = [[CategoryViewController alloc] initWithNibName:@"CategoryView" bundle:[NSBundle mainBundle]];
 				contentViewController.key = @"Type";
 				((CategoryViewController*)contentViewController).selectedCategory = self.category;
-				((CategoryViewController*)contentViewController).categories = [NSArray arrayWithObjects:NSLocalizedString(@"Steer", @""), 
-													NSLocalizedString(@"Brakes", @""),
-													NSLocalizedString(@"Tire", @""),
-													NSLocalizedString(@"Light", @""),
+				((CategoryViewController*)contentViewController).categories = [NSArray arrayWithObjects:
+																				NSLocalizedString(@"Saddle", @""),
+																				NSLocalizedString(@"Steer", @""),
+																				NSLocalizedString(@"Front Wheel", @""),
+																			   NSLocalizedString(@"Rear Wheel", @""),
+																			   NSLocalizedString(@"Front Light", @""),
+																			   NSLocalizedString(@"Rear Light", @""),
+																			   NSLocalizedString(@"Peddles", @""),
+																			   NSLocalizedString(@"Chain", @""),
+																			   NSLocalizedString(@"Bell", @""),
+																			   NSLocalizedString(@"Other", @""),
 													nil];
 				
 			}
 			else if (indexPath.row == 2)
 			{
+				[[GANTracker sharedTracker] trackEvent:@"reportDescription" action:@"tap" label:nil value:-1 withError:nil];
+
 				contentViewController = [[TextViewViewController2 alloc] initWithNibName:@"TextViewView2" bundle:[NSBundle mainBundle]];
 				contentViewController.view;
 				contentViewController.key = @"Description";
@@ -287,6 +302,7 @@
 		}
 		else if (indexPath.row == 3)
 		{
+			[[GANTracker sharedTracker] trackEvent:@"reportImage" action:@"tap" label:nil value:-1 withError:nil];
 			UIImagePickerController* ctrl = [[UIImagePickerController alloc] init];
 			ctrl.delegate = self;
 			ctrl.allowsEditing = YES;

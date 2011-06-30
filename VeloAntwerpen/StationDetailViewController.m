@@ -156,6 +156,8 @@
 	CLLocationCoordinate2D currentLocation = [[[UIApplication sharedApplication].delegate currentLocation] coordinate];
 	if (indexPath.section == 1 && indexPath.row == 0)
 	{
+		[[GANTracker sharedTracker] trackEvent:@"directionsToHere" action:@"tap" label:nil value:-1 withError:nil];
+
 		NSString* url = [NSString stringWithFormat: @"http://maps.google.com/maps?saddr=%f,%f&daddr=%f,%f",
 						 currentLocation.latitude, currentLocation.longitude,
 						 station.latitude, station.longitude];
@@ -164,6 +166,8 @@
 	}
 	else if (indexPath.section == 1 && indexPath.row == 1)
 	{
+		[[GANTracker sharedTracker] trackEvent:@"directionsFromHere" action:@"tap" label:nil value:-1 withError:nil];
+
 		NSString* url = [NSString stringWithFormat: @"http://maps.google.com/maps?saddr=%f,%f&daddr=%f,%f",
 						 station.latitude, station.longitude,
 						 currentLocation.latitude, currentLocation.longitude];
@@ -177,6 +181,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	[[GANTracker sharedTracker] trackPageview:@"/StationDetailView" withError:nil];
+	
 	self.title = NSLocalizedString(@"Details", @"");
 	self.mapView.layer.cornerRadius = 5.0;
 	self.mapView.layer.borderColor = [UIColor darkGrayColor].CGColor;

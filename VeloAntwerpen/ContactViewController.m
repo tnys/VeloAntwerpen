@@ -37,12 +37,16 @@
 
 -(IBAction)reportIssue:(id)btn
 {
+	[[GANTracker sharedTracker] trackEvent:@"reportIssue" action:@"tap" label:nil value:-1 withError:nil];
+
 	ReportIssueViewController* ctrl = [[[ReportIssueViewController alloc] initWithNibName:@"ReportIssueView" bundle:[NSBundle mainBundle]] autorelease];
 	[self.navigationController pushViewController:ctrl animated:YES];
 }
 
 -(IBAction)veloAntwerpenLink:(id)btn
 {
+	[[GANTracker sharedTracker] trackEvent:@"veloAntwerpenLink" action:@"tap" label:nil value:-1 withError:nil];
+
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.velo-antwerpen.be/"]];
 }
 

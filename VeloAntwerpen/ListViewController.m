@@ -34,6 +34,8 @@
 {
 	[super viewWillAppear:animated];
 	
+	[[GANTracker sharedTracker] trackPageview:@"/ListView" withError:nil];
+	
 	viewVisible = YES;
 }
 

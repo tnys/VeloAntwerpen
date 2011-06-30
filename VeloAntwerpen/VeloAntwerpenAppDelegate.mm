@@ -95,6 +95,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-414821-9" 
+										   dispatchPeriod:60.0 
+												 delegate:nil];
+	
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	locationManager.desiredAccuracy = kCLLocationAccuracyBest;

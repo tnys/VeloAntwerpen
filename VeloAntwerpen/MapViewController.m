@@ -34,6 +34,8 @@
 {
 	[super viewWillAppear:animated];
 	
+	[[GANTracker sharedTracker] trackPageview:@"/MapView" withError:nil];
+	
 	viewVisible = YES;
 }
 
@@ -46,6 +48,8 @@
 
 -(IBAction)zoomToCurrentLocation
 {
+	[[GANTracker sharedTracker] trackEvent:@"zoomToCurrentLocation" action:@"tap" label:nil value:-1 withError:nil];
+
 	MKCoordinateRegion region;
 	MKCoordinateSpan span;
 	
@@ -119,6 +123,8 @@
 {
 	if ([annotation isKindOfClass:[StationAnnotation class]])
 	{
+		[[GANTracker sharedTracker] trackEvent:@"annotationDetail" action:@"tap" label:nil value:-1 withError:nil];
+
 		StationAnnotation* stationAnnotation = (StationAnnotation*)annotation;
 		
 		MKPinAnnotationView* av = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"]; 
