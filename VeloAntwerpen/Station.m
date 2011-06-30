@@ -66,5 +66,29 @@
 		block(img);
 }
 
+- (void) encodeWithCoder: (NSCoder *)coder
+{
+    [coder encodeObject:self.name forKey:@"name"];
+    [coder encodeObject:[NSNumber numberWithDouble:self.latitude] forKey:@"latitude"];
+    [coder encodeObject:[NSNumber numberWithDouble:self.longitude] forKey:@"longitude"];
+    [coder encodeObject:[NSNumber numberWithInt:self.free] forKey:@"free"];
+    [coder encodeObject:[NSNumber numberWithInt:self.slots] forKey:@"slots"];
+    [coder encodeObject:[NSNumber numberWithInt:self.stationID] forKey:@"stationID"];
+    [coder encodeObject:self.lastUpdate forKey:@"lastUpdate"];
+}   
+- (id) initWithCoder: (NSCoder *)coder
+{
+    if (self = [super init])
+    {
+        self.name = [coder decodeObjectForKey:@"name"];
+		self.latitude = [[coder decodeObjectForKey:@"latitude"] doubleValue];
+		self.longitude = [[coder decodeObjectForKey:@"longitude"] doubleValue];
+		self.free = [[coder decodeObjectForKey:@"free"] intValue];
+		self.slots = [[coder decodeObjectForKey:@"slots"] intValue];
+		self.stationID = [[coder decodeObjectForKey:@"stationID"] intValue];
+		self.lastUpdate = [coder decodeObjectForKey:@"lastUpdate"];
+    }
+    return self;
+}
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Station : NSObject
+@interface Station : NSObject<NSCoding>
 {
 	CGFloat latitude;
 	CGFloat longitude;

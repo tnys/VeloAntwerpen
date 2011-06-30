@@ -79,6 +79,12 @@
 			}
 		}		
 		stations = [NSArray arrayWithArray:res];
+		if ([stations count])
+		{
+			NSData* d = [NSKeyedArchiver archivedDataWithRootObject:stations];
+			NSString* cacheFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+			[d writeToFile:[cacheFolder stringByAppendingPathComponent:@"stations.dat"] atomically:YES];
+		}
 		
 //		dispatch_async(dispatch_get_main_queue(), ^(void) {
 			[[NSNotificationCenter defaultCenter] postNotificationName:STATIONS_UPDATED_NOTIFICATIONNAME object:self userInfo:nil];
@@ -98,6 +104,10 @@
 	[[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-414821-9" 
 										   dispatchPeriod:60.0 
 												 delegate:nil];
+	
+	
+	NSString* cacheFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+	stations = [[NSKeyedUnarchiver unarchiveObjectWithFile:[cacheFolder stringByAppendingPathComponent:@"stations.dat"]] retain];
 	
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
