@@ -11,4 +11,6 @@
 
 #define STATIONS_UPDATED_NOTIFICATIONNAME			@"STATIONS_UPDATED"
 
+#define VELO_URL									@"https://api.velo-mobile.be/apibeta/"
+
 #endif

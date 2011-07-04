@@ -9,10 +9,12 @@
 #import "VeloAntwerpenAppDelegate.h"
 #import "tinyxml.h"
 #import "Station.h"
+#import "ASIFormDataRequest.h"
+
 #import <CoreLocation/CoreLocation.h>
 
 
-#define REFRESHVALUE				60
+#define REFRESHVALUE				60*5
 
 @implementation VeloAntwerpenAppDelegate
 
@@ -31,7 +33,15 @@
 	dispatch_async(dispatch_get_global_queue(0, 0), ^{
 		NSMutableArray* res = [NSMutableArray arrayWithCapacity:100];
 		NSError* err;
-		NSString* str = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://api.velo-mobile.be/api/app_id=d41d8cd98f00b204e9800998ecf8427e&output_format=xml&action=getstations"] encoding:NSUTF8StringEncoding error:&err];
+		
+		ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:VELO_URL]];
+		[request addPostValue:@"d41d8cd98f00b204e9800998ecf8427e" forKey:@"app_id"];
+		[request addPostValue:@"xml" forKey:@"output_format"];
+		[request addPostValue:@"GETSTATIONS" forKey:@"action"];
+		[request startSynchronous];
+		
+		NSString* str = [request responseString];
+		
 		TiXmlDocument doc2;
 		doc2.Parse([str UTF8String]);
 		
@@ -78,14 +88,14 @@
 				}
 			}
 		}		
-		stations = [NSArray arrayWithArray:res];
-		if ([stations count])
+		if ([res count])
 		{
+			stations = [[NSArray arrayWithArray:res] retain];
 			NSData* d = [NSKeyedArchiver archivedDataWithRootObject:stations];
 			NSString* cacheFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 			[d writeToFile:[cacheFolder stringByAppendingPathComponent:@"stations.dat"] atomically:YES];
 		}
-		
+
 //		dispatch_async(dispatch_get_main_queue(), ^(void) {
 			[[NSNotificationCenter defaultCenter] postNotificationName:STATIONS_UPDATED_NOTIFICATIONNAME object:self userInfo:nil];
 //		});
@@ -102,20 +112,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	[[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-414821-9" 
-										   dispatchPeriod:60.0 
+										   dispatchPeriod:10.0 
 												 delegate:nil];
-	
 	
 	NSString* cacheFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 	stations = [[NSKeyedUnarchiver unarchiveObjectWithFile:[cacheFolder stringByAppendingPathComponent:@"stations.dat"]] retain];
+	
+	networkQueue = dispatch_queue_create("networkqueue", 0);
+	dispatch_async(networkQueue, ^(void) {
+		if (![[NSFileManager defaultManager] fileExistsAtPath:[cacheFolder stringByAppendingPathComponent:@"1-th.png"]])
+		{
+			// copy over map caches
+			NSString* sourceFolder = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"cache"];
+			NSDirectoryEnumerator* enumerator = [[NSFileManager defaultManager] enumeratorAtPath:sourceFolder];
+			NSString *currentItemName;
+			while (currentItemName = [enumerator nextObject])
+			{
+				[[NSFileManager defaultManager] copyItemAtPath:[sourceFolder stringByAppendingPathComponent:currentItemName] toPath:[cacheFolder stringByAppendingPathComponent:currentItemName] error:nil];
+			}
+		}
+	});
 	
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 	[locationManager startUpdatingLocation];
-	
-	networkQueue = dispatch_queue_create("networkqueue", 0);
-	
+		
 	reloadTimer = [NSTimer scheduledTimerWithTimeInterval:REFRESHVALUE target:self selector:@selector(reload:) userInfo:nil repeats:YES];
 
 	[self reload];

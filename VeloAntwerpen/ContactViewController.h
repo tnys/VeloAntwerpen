@@ -12,10 +12,12 @@
 @interface ContactViewController : UIViewController {
     IBOutlet UILabel* reportLbl;
 	IBOutlet UIButton* reportBtn;
+	UIButton *veloMobileButton;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel* reportLbl;
 @property (nonatomic, retain) IBOutlet UIButton* reportBtn;
+@property (nonatomic, retain) IBOutlet UIButton *veloMobileButton;
 
 -(IBAction)reportIssue:(id)btn;
 -(IBAction)veloAntwerpenLink:(id)btn;

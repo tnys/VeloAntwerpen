@@ -14,6 +14,9 @@
 #import "TextFieldViewController2.h"
 #import "TextViewViewController2.h"
 #import "CategoryViewController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "NSData+Base64.h"
 
 @implementation ReportIssueViewController
 
@@ -30,6 +33,10 @@
 
 - (void)dealloc
 {
+	[categories release];
+	self.bikeId = nil;
+	self.category = nil;
+	self.description = nil;
 	[photo release];
     [super dealloc];
 }
@@ -48,7 +55,23 @@
 {
     [super viewDidLoad];
 	
+	categories = [[NSArray arrayWithObjects:NSLocalizedString(@"Saddle", @""),
+				  NSLocalizedString(@"Steer", @""),
+				  NSLocalizedString(@"Front Wheel", @""),
+				  NSLocalizedString(@"Rear Wheel", @""),
+				  NSLocalizedString(@"Front Light", @""),
+				  NSLocalizedString(@"Rear Light", @""),
+				  NSLocalizedString(@"Peddles", @""),
+				  NSLocalizedString(@"Chain", @""),
+				  NSLocalizedString(@"Bell", @""),
+				  NSLocalizedString(@"Other", @""),
+				   nil] retain];
+
 	self.title = NSLocalizedString(@"Report problem", @"");
+	self.bikeId = @"";
+	self.category = NSLocalizedString(@"Other", @"");
+	self.description = @"";
+	photo = nil;
 
 	[[GANTracker sharedTracker] trackPageview:@"/ReportIssue" withError:nil];
 }
@@ -92,12 +115,45 @@
 
 	[[SmallActivityIndicator instance] show:NSLocalizedString(@"Sending report..", @"") inView:self.view];
 	
-	double delayInSeconds = 2.0;
-	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+	ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:VELO_URL]];
+	[request addPostValue:@"d41d8cd98f00b204e9800998ecf8427e" forKey:@"app_id"];
+	[request addPostValue:@"xml" forKey:@"output_format"];
+	[request addPostValue:@"REPORTPROBLEM" forKey:@"action"];
+	[request addPostValue:[NSNumber numberWithInt:[bikeId intValue]] forKey:@"bike_id"];
+	[request addPostValue:[NSNumber numberWithInt:[categories indexOfObject:category]] forKey:@"element"];
+	[request addPostValue:description forKey:@"comment"];
+	
+	if (photo)
+	{
+		NSData* d = UIImageJPEGRepresentation(photo, 0.5);
+		[request addPostValue:[d base64EncodedString] forKey:@"picture"];
+	}
+	else
+	{
+		[request addPostValue:@"" forKey:@"picture"];
+	}
+	[request setCompletionBlock:^(void) {
+		NSLog(@"%@", [request responseString]);
+		
+		[[SmallActivityIndicator instance] show:NSLocalizedString(@"Report sent succesfully..", @"") inView:self.view];
+		double delayInSeconds = 2.0;
+		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+		dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+			[[SmallActivityIndicator instance] hide];
+		});
+
 		[[SmallActivityIndicator instance] hide];
 		[self.navigationController popViewControllerAnimated:YES];
-	});
+	}];
+	[request setFailedBlock:^(void) {
+		[[SmallActivityIndicator instance] show:NSLocalizedString(@"Sending failed..", @"") inView:self.view];
+		double delayInSeconds = 2.0;
+		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+		dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+			[[SmallActivityIndicator instance] hide];
+		});
+	}];
+	[request startAsynchronous];
 }
 
 
@@ -261,6 +317,7 @@
 				contentViewController.view;
 				contentViewController.key = @"ID";
 				((TextFieldViewController2*)contentViewController).textField.text = self.bikeId;
+				((TextFieldViewController2*)contentViewController).textField.keyboardType = UIKeyboardTypeNumberPad;
 				((TextFieldViewController2*)contentViewController).textField.placeholder = NSLocalizedString(@"Bicycle ID", @"");
 			}
 			else if (indexPath.row == 1)

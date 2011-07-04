@@ -12,6 +12,7 @@
 @implementation TextViewViewController2
 
 @synthesize textView;
+@synthesize descriptionLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +25,7 @@
 
 - (void)dealloc
 {
+    [descriptionLabel release];
     [super dealloc];
 }
 
@@ -49,12 +51,15 @@
 {
     [super viewDidLoad];
 	self.title = NSLocalizedString(@"Description", @"");
+	//Is het probleem met de fiets niet duidelijk zichtbaar, omschrijf dan hier kort waar de techniekers van Velo op moeten letten.
+	self.descriptionLabel.text = NSLocalizedString(@"Is the problem with the bicycle not immediately visible, please describe it briefly so the Velo technicians can easily find it.", @"");
 	textView.layer.cornerRadius = 5.0;
 	[textView becomeFirstResponder];
 }
 
 - (void)viewDidUnload
 {
+    [self setDescriptionLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

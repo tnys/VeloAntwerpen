@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
 	
-	self.navigationItem.title = @"VeloAntwerpen";
+	self.title = NSLocalizedString(@"Map", @"");
 	
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:[UIApplication sharedApplication].delegate action:@selector(reload)] autorelease];
 
@@ -97,7 +97,10 @@
 {
 	NSArray* stations = [[[UIApplication sharedApplication].delegate stations] retain];
 	
-	[mapView removeAnnotations:mapView.annotations];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[mapView removeAnnotations:mapView.annotations];
+	});
+	
 	for (Station* station in stations)
 	{
 		StationAnnotation* ann = [[StationAnnotation alloc] init];

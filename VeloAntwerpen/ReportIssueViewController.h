@@ -16,6 +16,8 @@
 	NSString* bikeId;
 	NSString* category;
 	NSString* description;
+	
+	NSArray* categories;
 }
 
 @property (nonatomic, retain) WEPopoverController* popoverController;

@@ -13,6 +13,7 @@
     IBOutlet UITableView* tableView;
 	NSArray* stations;
 	BOOL viewVisible;
+	int sortMode;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView* tableView;

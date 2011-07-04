@@ -11,8 +11,10 @@
 
 @interface TextViewViewController2 : ReportBackViewController {
     IBOutlet UITextView* textView;
+	UILabel *descriptionLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UITextView* textView;
 
+@property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
 @end

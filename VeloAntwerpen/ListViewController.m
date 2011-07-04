@@ -23,11 +23,22 @@
 {
     [super viewDidLoad];
 
-	self.navigationItem.title = NSLocalizedString(@"List", @"");
+	self.title = NSLocalizedString(@"List", @"");
+	
+	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sort.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(changeSorting:)] autorelease];
+	
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:[UIApplication sharedApplication].delegate action:@selector(reload)] autorelease];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stationsUpdated:) name:STATIONS_UPDATED_NOTIFICATIONNAME object:nil];
 	[[UIApplication sharedApplication].delegate reload];
+}
+
+-(void)changeSorting:(id)btn
+{
+	sortMode = !sortMode;
+	dispatch_async(dispatch_get_global_queue(0, 0), ^(void) {
+		[self stationsUpdated:nil];
+	});
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -56,6 +67,19 @@
 	}
 	
 	self.stations = [[UIApplication sharedApplication].delegate stations];
+	if (sortMode) // sort by distance
+	{
+		CLLocation* currentLocation = [[UIApplication sharedApplication].delegate currentLocation];
+		self.stations = [self.stations sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+			
+			CLLocationDistance distance1 = [currentLocation distanceFromLocation:[[[CLLocation alloc] initWithLatitude:[obj1 latitude] longitude:[obj1 longitude]] autorelease]];
+			CLLocationDistance distance2 = [currentLocation distanceFromLocation:[[[CLLocation alloc] initWithLatitude:[obj2 latitude] longitude:[obj2 longitude]] autorelease]];
+			if (distance1 < distance2)
+				return NSOrderedAscending;
+			else
+				return NSOrderedDescending;
+		}];
+	}
 	
 	if (viewVisible)
 	{
@@ -122,8 +146,16 @@
 		cell.imageView.layer.cornerRadius = 3.0;
 	}
 	
+	CLLocation* currentLocation = [[UIApplication sharedApplication].delegate currentLocation];
+	CLLocationDistance distance = [currentLocation distanceFromLocation:[[[CLLocation alloc] initWithLatitude:s.latitude longitude:s.longitude] autorelease]];
 	cell.textLabel.text = s.name;
-	cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%d slots, %d free", @""), s.slots, s.free];
+	if (s.free == 1)
+		cell.detailTextLabel.textColor = [UIColor orangeColor];
+	else if (s.free == 0)
+		cell.detailTextLabel.textColor = [UIColor redColor];
+	else
+		cell.detailTextLabel.textColor = [UIColor darkGrayColor];
+	cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%d slots, %d free, distance: %.1f km", @""), s.slots, s.free, distance / 1000.0];
 	return cell;
 }
 

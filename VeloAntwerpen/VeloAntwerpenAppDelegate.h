@@ -17,7 +17,7 @@
 	dispatch_queue_t networkQueue;
 }
 
-@property (nonatomic, readonly) NSArray* stations; 
+@property (readonly) NSArray* stations; 
 @property (nonatomic, readonly) CLLocation* currentLocation;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
