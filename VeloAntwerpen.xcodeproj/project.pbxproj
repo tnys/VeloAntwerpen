@@ -80,6 +80,7 @@
 		DB97164413C09EA6004CEC17 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DB97164313C09EA6004CEC17 /* NSData+Base64.m */; };
 		DB97164713C0A096004CEC17 /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = DB97164613C0A096004CEC17 /* sort.png */; };
 		DB97164913C0A196004CEC17 /* sort@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB97164813C0A196004CEC17 /* sort@2x.png */; };
+		DB97169513C1B4CD004CEC17 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB97169413C1B4CD004CEC17 /* Default@2x.png */; };
 		DBA13A4013B5CC81001BFFA5 /* TextFieldViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA13A3E13B5CC81001BFFA5 /* TextFieldViewController2.m */; };
 		DBA13A4113B5CC81001BFFA5 /* TextFieldView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA13A3F13B5CC81001BFFA5 /* TextFieldView2.xib */; };
 		DBA13A4413B5CD04001BFFA5 /* ReportBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA13A4313B5CD04001BFFA5 /* ReportBackViewController.m */; };
@@ -209,6 +210,7 @@
 		DB97164313C09EA6004CEC17 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		DB97164613C0A096004CEC17 /* sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sort.png; sourceTree = "<group>"; };
 		DB97164813C0A196004CEC17 /* sort@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sort@2x.png"; sourceTree = "<group>"; };
+		DB97169413C1B4CD004CEC17 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DBA13A3D13B5CC81001BFFA5 /* TextFieldViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController2.h; sourceTree = "<group>"; };
 		DBA13A3E13B5CC81001BFFA5 /* TextFieldViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController2.m; sourceTree = "<group>"; };
 		DBA13A3F13B5CC81001BFFA5 /* TextFieldView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldView2.xib; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				DBA13A4F13B603C0001BFFA5 /* velo_logo.png */,
 				DB7EFD0613B32535007D3BD6 /* 08-chat@2x.png */,
 				DB19B04B13B28C770060C98F /* Default.png */,
+				DB97169413C1B4CD004CEC17 /* Default@2x.png */,
 				DB50427513B2388800E869A3 /* icon.png */,
 				DBBEF43113BDE2B900D40B49 /* icon@2x.png */,
 				DB50426413B1D83800E869A3 /* navicon@2x.png */,
@@ -604,6 +607,7 @@
 				DBBEF43613BDE3FB00D40B49 /* logo@2x.png in Resources */,
 				DB97164713C0A096004CEC17 /* sort.png in Resources */,
 				DB97164913C0A196004CEC17 /* sort@2x.png in Resources */,
+				DB97169513C1B4CD004CEC17 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,7 +741,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = VeloAntwerpen/Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

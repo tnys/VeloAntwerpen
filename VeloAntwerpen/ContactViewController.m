@@ -60,12 +60,12 @@
     [super viewDidLoad];
 	self.veloMobileButton.titleLabel.numberOfLines = 4;
 	self.veloMobileButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
-	self.veloMobileButton.titleLabel.textAlignment = UITextAlignmentLeft;
+	self.veloMobileButton.titleLabel.textAlignment = UITextAlignmentCenter;
 	//Velo Mobile is de beste manier om een Velo te vinden in de stad Antwerpen. Surf naar http://www.velo-mobile.be voor alle verdere informatie over de software.
 	[self.veloMobileButton setTitle:NSLocalizedString(@"Velo Mobile is the best tool to find a Velo in Antwerp.  Go to http://www.velo-mobile.be for more information.", @"") forState:UIControlStateNormal];
 	self.title = NSLocalizedString(@"Contact", @"");
 	self.reportLbl.text = NSLocalizedString(@"Problems with your bicycle? Report them now!", @"");
-	[self.reportBtn setTitle:NSLocalizedString(@"Report problem", @"") forState:UIControlStateNormal];
+	[self.reportBtn setTitle:NSLocalizedString(@"Report problem with a bicycle", @"") forState:UIControlStateNormal];
 }
 
 - (void)viewDidUnload
