@@ -88,7 +88,6 @@
 		DBA13A4913B5CDB0001BFFA5 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA13A4713B5CDB0001BFFA5 /* CategoryView.xib */; };
 		DBA13A4D13B5CEC7001BFFA5 /* TextViewViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA13A4B13B5CEC7001BFFA5 /* TextViewViewController2.m */; };
 		DBA13A4E13B5CEC7001BFFA5 /* TextViewView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA13A4C13B5CEC7001BFFA5 /* TextViewView2.xib */; };
-		DBA13A5013B603C0001BFFA5 /* velo_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA13A4F13B603C0001BFFA5 /* velo_logo.png */; };
 		DBBEF43213BDE2B900D40B49 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBEF43113BDE2B900D40B49 /* icon@2x.png */; };
 		DBBEF43513BDE3FB00D40B49 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBEF43313BDE3FB00D40B49 /* logo.png */; };
 		DBBEF43613BDE3FB00D40B49 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBEF43413BDE3FB00D40B49 /* logo@2x.png */; };
@@ -222,7 +221,6 @@
 		DBA13A4A13B5CEC7001BFFA5 /* TextViewViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewViewController2.h; sourceTree = "<group>"; };
 		DBA13A4B13B5CEC7001BFFA5 /* TextViewViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewViewController2.m; sourceTree = "<group>"; };
 		DBA13A4C13B5CEC7001BFFA5 /* TextViewView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewView2.xib; sourceTree = "<group>"; };
-		DBA13A4F13B603C0001BFFA5 /* velo_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velo_logo.png; sourceTree = "<group>"; };
 		DBBEF43113BDE2B900D40B49 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		DBBEF43313BDE3FB00D40B49 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		DBBEF43413BDE3FB00D40B49 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 				DB7EFD0513B32535007D3BD6 /* 08-chat.png */,
 				DB97164613C0A096004CEC17 /* sort.png */,
 				DB97164813C0A196004CEC17 /* sort@2x.png */,
-				DBA13A4F13B603C0001BFFA5 /* velo_logo.png */,
 				DB7EFD0613B32535007D3BD6 /* 08-chat@2x.png */,
 				DB19B04B13B28C770060C98F /* Default.png */,
 				DB97169413C1B4CD004CEC17 /* Default@2x.png */,
@@ -595,7 +592,6 @@
 				DBA13A4113B5CC81001BFFA5 /* TextFieldView2.xib in Resources */,
 				DBA13A4913B5CDB0001BFFA5 /* CategoryView.xib in Resources */,
 				DBA13A4E13B5CEC7001BFFA5 /* TextViewView2.xib in Resources */,
-				DBA13A5013B603C0001BFFA5 /* velo_logo.png in Resources */,
 				DBF233ED13B7BBE000569798 /* Entitlements.plist in Resources */,
 				9844B3ED13B9F42F00619BCA /* map.png in Resources */,
 				DB239C7B13BD1F10006E0D3E /* cache in Resources */,

@@ -29,6 +29,11 @@
 	[super dealloc];
 }
 
+-(NSString*)description
+{
+	return self.name;
+}
+
 -(NSString*)tableViewImageFilename
 {
 	NSString* cacheFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];

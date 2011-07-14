@@ -11,7 +11,10 @@
 
 @interface ListViewController : UIViewController {
     IBOutlet UITableView* tableView;
+
 	NSArray* stations;
+	NSMutableDictionary* stationsIndexed;
+	
 	BOOL viewVisible;
 	int sortMode;
 }
@@ -20,5 +23,6 @@
 @property (nonatomic, retain) NSArray* stations;
 
 -(void)stationsUpdated:(NSNotification*)notif;
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope;
 
 @end

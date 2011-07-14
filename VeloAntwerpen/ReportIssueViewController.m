@@ -168,7 +168,7 @@
 {
 	if (section == 0)
 	{
-		if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+		if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
 		    return 4;
 		else
 			return 3;
@@ -360,11 +360,9 @@
 		else if (indexPath.row == 3)
 		{
 			[[GANTracker sharedTracker] trackEvent:@"reportImage" action:@"tap" label:nil value:-1 withError:nil];
-			UIImagePickerController* ctrl = [[UIImagePickerController alloc] init];
-			ctrl.delegate = self;
-			ctrl.allowsEditing = YES;
-			ctrl.sourceType = UIImagePickerControllerSourceTypeCamera;
-			[self presentModalViewController:ctrl animated:YES];
+			
+			UIActionSheet* sheet = [[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"") destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Camera", @""), NSLocalizedString(@"Photo Library", @""), nil] autorelease];
+			[sheet showFromTabBar:self.tabBarController.tabBar];
 		}
 	}
 	else if (indexPath.section == 1)
@@ -373,6 +371,27 @@
 	}
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == [actionSheet cancelButtonIndex]) // cancel
+		return;
+	
+	
+	UIImagePickerController* ctrl = [[UIImagePickerController alloc] init];
+	ctrl.delegate = self;
+	ctrl.allowsEditing = YES;
+	if (buttonIndex == [actionSheet firstOtherButtonIndex]) // camera
+	{
+		if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+			ctrl.sourceType = UIImagePickerControllerSourceTypeCamera;
+		else
+			ctrl.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+	}
+	else if (buttonIndex == [actionSheet firstOtherButtonIndex] + 1) // photo library
+		ctrl.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+	[self presentModalViewController:ctrl animated:YES];
 }
 
 @end
